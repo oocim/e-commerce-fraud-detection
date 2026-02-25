@@ -1,0 +1,16 @@
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Natural Language Processing
+nltk>=3.8.0
+spacy>=3.5.0
+
+# URL validation
+validators>=0.20.0
+
+# Machine learning utilities (for preprocessing)
+scikit-learn>=1.2.0
+
+# Progress bars
+tqdm>=4.65.0
