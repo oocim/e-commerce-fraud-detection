@@ -1,13 +1,12 @@
 """
-Train metadata fraud models and classify Lazada records.
+Train metadata fraud models (Random Forest, Logistic Regression, XGBoost).
 
 This script:
-1) Trains Random Forest, Logistic Regression, and XGBoost using
-   metadata_dataset + synthetic_metadata_dataset
-2) Uses all metadata features (raw, derived, scaled)
-3) Applies the trained models to all rows in lazada_normalized_dedup.csv
-   as an unlabeled test set (ignores is_fraudulent column)
-4) Saves per-row predictions and model probability outputs
+1) Loads metadata_dataset + synthetic_metadata_dataset (fraud-only augmentation)
+2) Trains and evaluates three classifiers with stratified split
+3) Exports test-set predictions (product_id, fraud_label, probabilities)
+   for use in the multimodal ensemble
+4) Saves trained models and scaler to disk
 """
 
 import numpy as np
@@ -39,88 +38,19 @@ SYNTH_PATH_CANDIDATES = [
     PROJECT_DIR / "synthetic_metadata_dataset.csv",
     PROJECT_DIR / "synthetic_metadata__dataset.csv",
 ]
-LAZADA_PATH = PROJECT_DIR / "processed_data" / "lazada_normalized_dedup.csv"
-OUTPUT_DIR = PROJECT_DIR / "lazada_predictions"
+OUTPUT_DIR = PROJECT_DIR / "predictions"
 MODEL_DIR = PROJECT_DIR / "saved_models"
 OUTPUT_DIR.mkdir(exist_ok=True)
 MODEL_DIR.mkdir(exist_ok=True)
-
-
-def _safe_numeric(series: pd.Series, fill_value: float) -> pd.Series:
-    return pd.to_numeric(series, errors="coerce").fillna(fill_value)
-
-
-def engineer_metadata_features(df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
-    """Create metadata features compatible with metadata_dataset training schema."""
-    output = df.copy()
-
-    required_raw_cols = [
-        "listed_price",
-        "original_price",
-        "seller_rating",
-        "rating_count",
-        "item_rating",
-        "item_rating_count",
-        "review1_rating",
-        "review2_rating",
-    ]
-
-    for col in required_raw_cols:
-        if col not in output.columns:
-            output[col] = np.nan
-
-    output["listed_price"] = _safe_numeric(output["listed_price"], ref_df["listed_price"].median())
-    output["original_price"] = _safe_numeric(output["original_price"], ref_df["original_price"].median())
-    output["seller_rating"] = _safe_numeric(output["seller_rating"], ref_df["seller_rating"].mean())
-    output["rating_count"] = _safe_numeric(output["rating_count"], ref_df["rating_count"].median())
-    output["item_rating"] = _safe_numeric(output["item_rating"], ref_df["item_rating"].mean())
-    output["item_rating_count"] = _safe_numeric(output["item_rating_count"], ref_df["item_rating_count"].median())
-    output["review1_rating"] = _safe_numeric(output["review1_rating"], ref_df["review1_rating"].mean())
-    output["review2_rating"] = _safe_numeric(output["review2_rating"], ref_df["review2_rating"].mean())
-
-    output["price_deviation"] = np.where(
-        output["original_price"] > 0,
-        ((output["original_price"] - output["listed_price"]) / output["original_price"]) * 100,
-        0.0,
-    )
-    output["price_ratio"] = np.where(
-        output["original_price"] > 0,
-        output["listed_price"] / output["original_price"],
-        1.0,
-    )
-    output["abnormal_discount"] = (output["price_deviation"] > 70).astype(int)
-    output["review_rating_diff"] = (output["review1_rating"] - output["review2_rating"]).abs()
-    output["seller_item_rating_gap"] = (output["seller_rating"] - output["item_rating"]).abs()
-
-    features_to_scale = [
-        "listed_price",
-        "original_price",
-        "price_deviation",
-        "price_ratio",
-        "seller_rating",
-        "rating_count",
-        "item_rating",
-        "item_rating_count",
-        "review1_rating",
-        "review2_rating",
-        "review_rating_diff",
-        "seller_item_rating_gap",
-    ]
-
-    for col in features_to_scale:
-        min_val = ref_df[col].min()
-        max_val = ref_df[col].max()
-        if max_val > min_val:
-            output[f"{col}_scaled"] = (output[col] - min_val) / (max_val - min_val)
-        else:
-            output[f"{col}_scaled"] = 0.0
-
-    return output
+SEED = 42
+SYNTH_CAP = 150  # max synthetic fraud rows (prevents overfitting)
 
 
 def main() -> None:
+    # ── Load data ────────────────────────────────────────────────
     print("Loading training datasets...")
     metadata_df = pd.read_csv(DATA_PATH)
+    print(f"Original dataset: {metadata_df.shape}")
     print(f"Fraud distribution:\n{metadata_df['fraud_label'].value_counts()}\n")
 
     synth_path = next((path for path in SYNTH_PATH_CANDIDATES if path.exists()), None)
@@ -131,17 +61,25 @@ def main() -> None:
     print(f"Synthetic dataset loaded from: {synth_path}")
     print(f"Synthetic shape: {synthetic_df.shape}")
 
-    train_df = pd.concat([metadata_df, synthetic_df], ignore_index=True)
-    print(f"Combined dataset shape: {train_df.shape}")
-    print(f"Combined fraud distribution:\n{train_df['fraud_label'].value_counts()}\n")
+    # Cap synthetic data to prevent overfitting
+    if len(synthetic_df) > SYNTH_CAP:
+        synthetic_df = synthetic_df.sample(n=SYNTH_CAP, random_state=SEED)
+        print(f"Capped synthetic data to {SYNTH_CAP} rows")
+
+    combined_df = pd.concat([metadata_df, synthetic_df], ignore_index=True)
+    print(f"Combined dataset shape: {combined_df.shape}")
+    print(f"Combined fraud distribution:\n{combined_df['fraud_label'].value_counts()}")
+    print(f"Fraud ratio: {100*combined_df['fraud_label'].mean():.1f}%\n")
 
     feature_cols = [c for c in metadata_df.columns if c not in ["product_id", "fraud_label"]]
 
-    X = train_df[feature_cols].copy()
-    y = train_df["fraud_label"].astype(int).copy()
+    X = combined_df[feature_cols].copy()
+    y = combined_df["fraud_label"].astype(int).copy()
+    product_ids = combined_df["product_id"].values
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y
+    # ── Train / Test split ───────────────────────────────────────
+    X_train, X_test, y_train, y_test, pid_train, pid_test = train_test_split(
+        X, y, product_ids, test_size=0.2, random_state=SEED, stratify=y
     )
 
     print(f"Train size: {X_train.shape[0]}  |  Test size: {X_test.shape[0]}")
@@ -153,39 +91,51 @@ def main() -> None:
     X_test_scaled = scaler.transform(X_test)
 
     neg, pos = np.bincount(y_train)
-    scale_pos_weight = neg / pos
+    print(f"Class distribution: not-fraud={neg}, fraud={pos} ({100*pos/(neg+pos):.1f}%)")
 
+    # NOTE: No class_weight/scale_pos_weight — synthetic fraud data (500 rows)
+    # already boosted fraud from 4.3% to 20.7%. Adding class weighting on top
+    # causes severe overconfidence and false positives on legitimate listings.
+
+    # ── Define models ────────────────────────────────────────────
+    # Regularization tuned to prevent overfitting on small dataset (~2,575 rows)
     models = {
         "Random Forest": RandomForestClassifier(
-            n_estimators=300,
-            max_depth=12,
-            min_samples_split=5,
-            min_samples_leaf=2,
-            class_weight="balanced",
-            random_state=42,
+            n_estimators=200,    # reduced from 300
+            max_depth=8,         # reduced from 12 — shallower trees generalize better
+            min_samples_split=10,  # increased from 5
+            min_samples_leaf=5,    # increased from 2
+            max_features='sqrt',   # limit features per split
+            random_state=SEED,
             n_jobs=-1,
         ),
         "Logistic Regression": LogisticRegression(
             max_iter=1000,
-            class_weight="balanced",
+            C=0.1,             # added L2 regularization (default C=1.0 is too loose)
             solver="lbfgs",
-            random_state=42,
+            random_state=SEED,
         ),
         "XGBoost": XGBClassifier(
-            n_estimators=300,
-            max_depth=6,
-            learning_rate=0.1,
-            scale_pos_weight=scale_pos_weight,
+            n_estimators=200,    # reduced from 300
+            max_depth=4,         # reduced from 6 — prevents memorization
+            learning_rate=0.05,  # reduced from 0.1 — slower learning
+            min_child_weight=5,  # requires more samples per leaf
+            subsample=0.8,       # row subsampling — stochastic regularization
+            colsample_bytree=0.8,  # column subsampling
+            reg_alpha=0.1,       # L1 regularization
+            reg_lambda=1.0,      # L2 regularization
             eval_metric="logloss",
-            random_state=42,
+            random_state=SEED,
             n_jobs=-1,
         ),
     }
 
     results = {}
+    test_predictions = pd.DataFrame({"product_id": pid_test, "fraud_label": y_test.values})
 
+    # ── Train, evaluate, collect test predictions ────────────────
     print("Training and evaluating models...")
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=SEED)
 
     for name, model in models.items():
         print("=" * 60)
@@ -227,6 +177,39 @@ def main() -> None:
             "cv_f1_std": cv_scores.std(),
         }
 
+        # Store per-model test predictions
+        key = name.lower().replace(" ", "_")
+        test_predictions[f"{key}_fraud_proba"] = y_proba
+        test_predictions[f"{key}_pred"] = y_pred
+
+        # Save model
+        joblib.dump(model, MODEL_DIR / f"{key}.joblib")
+
+    # Save scaler
+    joblib.dump(scaler, MODEL_DIR / "scaler.joblib")
+
+    # Save min/max stats for the _scaled features (needed at inference)
+    # The metadata_dataset.csv has pre-computed _scaled columns using the
+    # full dataset's min/max. We need those same stats for single-row inference.
+    import json
+    scale_cols = [
+        "listed_price", "original_price", "price_deviation", "price_ratio",
+        "seller_rating", "rating_count", "item_rating", "item_rating_count",
+        "review1_rating", "review2_rating", "review_rating_diff", "seller_item_rating_gap",
+    ]
+    minmax_stats = {}
+    for col in scale_cols:
+        if col in metadata_df.columns:
+            minmax_stats[col] = {
+                "min": float(metadata_df[col].min()),
+                "max": float(metadata_df[col].max()),
+            }
+    minmax_path = MODEL_DIR / "minmax_stats.json"
+    with open(minmax_path, "w") as f:
+        json.dump(minmax_stats, f, indent=2)
+    print(f"Saved min/max scaling stats: {minmax_path}")
+
+    # ── Summary ──────────────────────────────────────────────────
     print("\n" + "=" * 60)
     print("  MODEL COMPARISON SUMMARY")
     print("=" * 60)
@@ -236,81 +219,21 @@ def main() -> None:
     best = summary["f1"].idxmax()
     print(f"\n>>> Best model by F1 score: {best} ({summary.loc[best, 'f1']:.4f})\n")
 
-    print("Training models on full metadata+synthetic dataset for Lazada inference...")
-    trained_models = {}
-    for name, model in models.items():
-        full_scaler = StandardScaler().fit(X)
-        X_scaled = full_scaler.transform(X)
+    # Use best model's proba as the representative metadata probability
+    best_key = best.lower().replace(" ", "_")
+    test_predictions["metadata_fraud_proba"] = test_predictions[f"{best_key}_fraud_proba"]
+    test_predictions["metadata_pred"] = test_predictions[f"{best_key}_pred"]
 
-        if name == "Logistic Regression":
-            model.fit(X_scaled, y)
-        else:
-            model.fit(X, y)
-        trained_models[name] = model
+    # ── Export test predictions for ensemble ──────────────────────
+    output_path = OUTPUT_DIR / "metadata_test_predictions.csv"
+    test_predictions.to_csv(output_path, index=False)
+    print(f"\nSaved test predictions: {output_path}")
+    print(f"Rows: {len(test_predictions)}")
+    print(f"Columns: {list(test_predictions.columns)}")
 
-        safe_name = name.lower().replace(" ", "_")
-        joblib.dump(model, MODEL_DIR / f"{safe_name}_lazada.joblib")
-
-    scaler = StandardScaler().fit(X)
-    joblib.dump(scaler, MODEL_DIR / "scaler_lazada.joblib")
-
-    print("Preparing Lazada test set (unlabeled inference)...")
-    lazada_df = pd.read_csv(LAZADA_PATH)
-    lazada_df = lazada_df.copy()
-
-    if "product_id" not in lazada_df.columns:
-        lazada_df["product_id"] = [f"lazada_{i+1:05d}" for i in range(len(lazada_df))]
-
-    # Ignore label-like column in Lazada by design
-    if "is_fraudulent" in lazada_df.columns:
-        lazada_df = lazada_df.drop(columns=["is_fraudulent"])
-
-    lazada_features_df = engineer_metadata_features(lazada_df, train_df)
-    X_lazada = lazada_features_df[feature_cols].copy()
-    X_lazada_scaled = scaler.transform(X_lazada)
-
-    output = lazada_df.copy()
-
-    print(f"Lazada rows to classify: {len(output)}")
-    for name, model in trained_models.items():
-        key = name.lower().replace(" ", "_")
-        if name == "Logistic Regression":
-            pred = model.predict(X_lazada_scaled)
-            proba = model.predict_proba(X_lazada_scaled)[:, 1]
-        else:
-            pred = model.predict(X_lazada)
-            proba = model.predict_proba(X_lazada)[:, 1]
-
-        output[f"{key}_pred"] = pred
-        output[f"{key}_fraud_proba"] = proba
-
-        print(
-            f"{name:20s} -> predicted fraud: {int(pred.sum())}/{len(pred)} "
-            f"({pred.mean():.2%}), avg proba={proba.mean():.4f}"
-        )
-
-    vote_cols = [
-        "random_forest_pred",
-        "logistic_regression_pred",
-        "xgboost_pred",
-    ]
-    output["fraud_votes"] = output[vote_cols].sum(axis=1)
-    output["fraud_majority_pred"] = (output["fraud_votes"] >= 2).astype(int)
-
-    proba_cols = [
-        "random_forest_fraud_proba",
-        "logistic_regression_fraud_proba",
-        "xgboost_fraud_proba",
-    ]
-    output["fraud_avg_proba"] = output[proba_cols].mean(axis=1)
-
-    output_path = OUTPUT_DIR / "lazada_metadata_predictions.csv"
-    output.to_csv(output_path, index=False)
-
-    print("\nSaved predictions:")
-    print(output_path)
-    print("\nMajority-vote prediction count:")
-    print(output["fraud_majority_pred"].value_counts())
+    print(f"\nSaved models to: {MODEL_DIR}")
+    for f in sorted(MODEL_DIR.glob("*.joblib")):
+        print(f"  - {f.name}")
 
 
 if __name__ == "__main__":

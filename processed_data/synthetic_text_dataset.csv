@@ -1,501 +1,151 @@
 product_id,fraud_label,title_cleaned,description_cleaned,review1_cleaned,review2_cleaned
-20000,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,mic not clear
-20001,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,screen dim
-20002,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,light uneven,stop after days
-20003,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,mic not clear
-20004,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,work not good
-20005,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,not powerful
-20006,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,touch delay,usb loose
-20007,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,return maybe
-20008,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,usb loose
-20009,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,usb loose
-20010,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,mic not clear
-20011,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,plastic thin
-20012,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,work not good
-20013,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,light uneven,fine but weak
-20014,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,battery drain fast
-20015,1,table lamp usb charging,desk lamp brightness adjustable simple design,touch delay,stop after days
-20016,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,strap cheap,battery short
-20017,1,phone charger power adapter,fast charger usb c wall adapter compact,heat up,stop charging
-20018,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,good only indoor
-20019,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,mic not clear
-20020,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,count steps wrong,battery short
-20021,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,light uneven,stop after days
-20022,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,fine but weak
-20023,1,fast charger usb c wall,power adapter for phone tablet travel,fine emergency,plug loose
-20024,1,fast charger usb c wall,power adapter for phone tablet travel,slow sometimes,stop charging
-20025,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,work not good
-20026,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,fine for price,good only indoor
-20027,1,phone charger power adapter,fast charger usb c wall adapter compact,slow sometimes,ok only once
-20028,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,mic not clear
-20029,1,smart band steps sleep monitor,smart band monitor activity simple screen,ok basic,battery short
-20030,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,fine only once
-20031,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,not powerful
-20032,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,count steps wrong,battery short
-20033,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,usb loose
-20034,1,smart band steps sleep monitor,smart band monitor activity simple screen,strap cheap,battery short
-20035,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,plastic cheap
-20036,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,plastic thin
-20037,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20038,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,fine for price,good only indoor
-20039,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,sync problem,app crash
-20040,1,table lamp usb charging,desk lamp brightness adjustable simple design,touch delay,fine but weak
-20041,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,strap cheap,work not good
-20042,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,light uneven,plastic thin
-20043,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,sync problem,work not good
-20044,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,stop charging
-20045,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,sync problem,work not good
-20046,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,app crash
-20047,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,good only indoor
-20048,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,touch delay,fine but weak
-20049,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,battery drain fast
-20050,1,mini blender personal cup,mini blender personal use travel small motor,works sometimes,plastic cheap
-20051,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,stop after days
-20052,1,table lamp usb charging,desk lamp brightness adjustable simple design,touch delay,stop after days
-20053,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,battery drain fast
-20054,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,battery drain fast
-20055,1,mini blender personal cup,mini blender personal use travel small motor,blade weak,not powerful
-20056,1,phone charger power adapter,fast charger usb c wall adapter compact,slow sometimes,cheap plastic
-20057,1,phone charger power adapter,power adapter for phone tablet travel,slow sometimes,ok only once
-20058,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,ok basic,work not good
-20059,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,leak little
-20060,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,screen dim
-20061,1,mini blender personal cup,mini blender personal use travel small motor,works sometimes,plastic cheap
-20062,1,fast charger usb c wall,fast charger usb c wall adapter compact,fine emergency,cheap plastic
-20063,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,fine but weak
-20064,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,mic not clear
-20065,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,fine but weak
-20066,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,mic not clear
-20067,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,good only indoor
-20068,1,phone charger power adapter,fast charger usb c wall adapter compact,fine emergency,cheap plastic
-20069,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,plastic thin
-20070,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,plastic thin
-20071,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,leak little
-20072,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,stop after days
-20073,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,screen dim
-20074,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,fine only once
-20075,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,work not good
-20076,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,touch delay,fine but weak
-20077,1,phone charger power adapter,fast charger usb c wall adapter compact,fine emergency,plug loose
-20078,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,fine but weak
-20079,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,cheap base,plastic thin
-20080,1,mini blender personal cup,mini blender personal use travel small motor,works sometimes,plastic cheap
-20081,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,cheap base,stop after days
-20082,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,plastic thin
-20083,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,return maybe
-20084,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,stop after days
-20085,1,phone charger power adapter,power adapter for phone tablet travel,fine emergency,stop charging
-20086,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,sync problem,work not good
-20087,1,fast charger usb c wall,fast charger usb c wall adapter compact,heat up,plug loose
-20088,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,battery drain fast
-20089,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,usb loose
-20090,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,plastic cheap
-20091,1,phone charger power adapter,power adapter for phone tablet travel,cord short,ok only once
-20092,1,smart band steps sleep monitor,smart band monitor activity simple screen,ok basic,app crash
-20093,1,phone charger power adapter,power adapter for phone tablet travel,fine emergency,plug loose
-20094,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,light uneven,fine but weak
-20095,1,fast charger usb c wall,fast charger usb c wall adapter compact,fine emergency,stop charging
-20096,1,phone charger power adapter,power adapter for phone tablet travel,fine emergency,ok only once
-20097,1,fast charger usb c wall,fast charger usb c wall adapter compact,fine emergency,stop charging
-20098,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,stop after days
-20099,1,smart band steps sleep monitor,smart band monitor activity simple screen,ok basic,work not good
-20100,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,work not good
-20101,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,not powerful
-20102,1,fast charger usb c wall,power adapter for phone tablet travel,cord short,cheap plastic
-20103,1,mini blender personal cup,mini blender personal use travel small motor,motor smell,not powerful
-20104,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,plastic cheap
-20105,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,battery drain fast
-20106,1,mini blender personal cup,mini blender personal use travel small motor,works sometimes,leak little
-20107,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,return maybe
-20108,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,return maybe
-20109,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,light uneven,plastic thin
-20110,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,fine only once
-20111,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,work not good
-20112,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,leak little
-20113,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,work not good
-20114,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,mic not clear
-20115,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,not powerful
-20116,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,cheap base,fine but weak
-20117,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,sync problem,app crash
-20118,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,touch delay,usb loose
-20119,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,fine only once
-20120,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,work not good
-20121,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,work not good
-20122,1,phone charger power adapter,fast charger usb c wall adapter compact,slow sometimes,ok only once
-20123,1,mini blender personal cup,mini blender personal use travel small motor,blade weak,plastic cheap
-20124,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,cheap base,stop after days
-20125,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,screen dim
-20126,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,plastic thin
-20127,1,smart band steps sleep monitor,smart band monitor activity simple screen,sync problem,battery short
-20128,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,touch delay,plastic thin
-20129,1,smart band steps sleep monitor,smart band monitor activity simple screen,sync problem,app crash
-20130,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,left ear stop work,return maybe
-20131,1,mini blender personal cup,mini blender personal use travel small motor,motor smell,not powerful
-20132,1,phone charger power adapter,power adapter for phone tablet travel,slow sometimes,cheap plastic
-20133,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,fine for price,return maybe
-20134,1,mini blender personal cup,mini blender personal use travel small motor,blade weak,not powerful
-20135,1,phone charger power adapter,fast charger usb c wall adapter compact,cord short,cheap plastic
-20136,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,fine only once
-20137,1,portable blender smoothie usb,mini blender personal use travel small motor,blade weak,leak little
-20138,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,sync problem,work not good
-20139,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,not powerful
-20140,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,strap cheap,battery short
-20141,1,phone charger power adapter,power adapter for phone tablet travel,slow sometimes,plug loose
-20142,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,ok only once
-20143,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,cheap plastic
-20144,1,fast charger usb c wall,fast charger usb c wall adapter compact,slow sometimes,cheap plastic
-20145,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,battery short
-20146,1,fast charger usb c wall,power adapter for phone tablet travel,cord short,plug loose
-20147,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,cheap base,usb loose
-20148,1,portable blender smoothie usb,mini blender personal use travel small motor,works sometimes,not powerful
-20149,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,cheap base,plastic thin
-20150,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,return maybe
-20151,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,not powerful
-20152,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,usb loose
-20153,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,mic not clear
-20154,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,plastic thin
-20155,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,work not good
-20156,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,stop after days
-20157,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,ok only once
-20158,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,fine but weak
-20159,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,left ear stop work,mic not clear
-20160,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,mic not clear
-20161,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,cheap plastic
-20162,1,fast charger usb c wall,fast charger usb c wall adapter compact,slow sometimes,ok only once
-20163,1,phone charger power adapter,power adapter for phone tablet travel,heat up,ok only once
-20164,1,fast charger usb c wall,power adapter for phone tablet travel,cord short,stop charging
-20165,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,ok only once
-20166,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,cheap base,plastic thin
-20167,1,fast charger usb c wall,power adapter for phone tablet travel,cord short,plug loose
-20168,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,battery short
-20169,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,touch delay,plastic thin
-20170,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,stop after days
-20171,1,phone charger power adapter,power adapter for phone tablet travel,slow sometimes,cheap plastic
-20172,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,not powerful
-20173,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,ok basic,battery short
-20174,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,plastic cheap
-20175,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,light uneven,stop after days
-20176,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,plastic thin
-20177,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,battery drain fast
-20178,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,not powerful
-20179,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,touch delay,fine but weak
-20180,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,battery drain fast
-20181,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,leak little
-20182,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,fine only once
-20183,1,phone charger power adapter,fast charger usb c wall adapter compact,slow sometimes,ok only once
-20184,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,return maybe
-20185,1,mini blender personal cup,mini blender personal use travel small motor,works sometimes,fine only once
-20186,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20187,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,plastic cheap
-20188,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,app crash
-20189,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,light uneven,fine but weak
-20190,1,phone charger power adapter,fast charger usb c wall adapter compact,slow sometimes,ok only once
-20191,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,app crash
-20192,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,mic not clear
-20193,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,battery drain fast
-20194,1,phone charger power adapter,power adapter for phone tablet travel,heat up,stop charging
-20195,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,return maybe
-20196,1,fast charger usb c wall,power adapter for phone tablet travel,fine emergency,stop charging
-20197,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,return maybe
-20198,1,phone charger power adapter,power adapter for phone tablet travel,fine emergency,plug loose
-20199,1,smart band steps sleep monitor,smart band monitor activity simple screen,strap cheap,app crash
-20200,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,usb loose
-20201,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,mic not clear
-20202,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,good only indoor
-20203,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,screen dim
-20204,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,not powerful
-20205,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20206,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,good only indoor
-20207,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,mic not clear
-20208,1,phone charger power adapter,fast charger usb c wall adapter compact,slow sometimes,stop charging
-20209,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,mic not clear
-20210,1,mini blender personal cup,mini blender personal use travel small motor,motor smell,plastic cheap
-20211,1,phone charger power adapter,power adapter for phone tablet travel,cord short,plug loose
-20212,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,battery drain fast
-20213,1,fast charger usb c wall,fast charger usb c wall adapter compact,heat up,stop charging
-20214,1,table lamp usb charging,desk lamp brightness adjustable simple design,touch delay,plastic thin
-20215,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,light uneven,fine but weak
-20216,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,app crash
-20217,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,usb loose
-20218,1,phone charger power adapter,fast charger usb c wall adapter compact,heat up,plug loose
-20219,1,phone charger power adapter,fast charger usb c wall adapter compact,heat up,ok only once
-20220,1,smart band steps sleep monitor,smart band monitor activity simple screen,strap cheap,app crash
-20221,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,return maybe
-20222,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,plastic cheap
-20223,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,left ear stop work,battery drain fast
-20224,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,return maybe
-20225,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,cheap base,stop after days
-20226,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,stop after days
-20227,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,fine but weak
-20228,1,phone charger power adapter,power adapter for phone tablet travel,cord short,plug loose
-20229,1,fast charger usb c wall,fast charger usb c wall adapter compact,heat up,cheap plastic
-20230,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,good only indoor
-20231,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,count steps wrong,battery short
-20232,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,strap cheap,screen dim
-20233,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,good only indoor
-20234,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,screen dim
-20235,1,fast charger usb c wall,fast charger usb c wall adapter compact,fine emergency,cheap plastic
-20236,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,return maybe
-20237,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,stop charging
-20238,1,portable blender smoothie usb,mini blender personal use travel small motor,ok for soft fruit,leak little
-20239,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,screen dim
-20240,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,not powerful
-20241,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,not powerful
-20242,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,mic not clear
-20243,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,cheap base,usb loose
-20244,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,battery drain fast
-20245,1,phone charger power adapter,fast charger usb c wall adapter compact,heat up,plug loose
-20246,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,cheap base,usb loose
-20247,1,mini blender personal cup,mini blender personal use travel small motor,ok for soft fruit,fine only once
-20248,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,good only indoor
-20249,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,screen dim
-20250,1,smart band steps sleep monitor,smart band monitor activity simple screen,strap cheap,app crash
-20251,1,phone charger power adapter,power adapter for phone tablet travel,heat up,cheap plastic
-20252,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,fine but weak
-20253,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,work not good
-20254,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,usb loose
-20255,1,table lamp usb charging,desk lamp brightness adjustable simple design,touch delay,usb loose
-20256,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,not powerful
-20257,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,cheap base,stop after days
-20258,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,light uneven,fine but weak
-20259,1,fast charger usb c wall,fast charger usb c wall adapter compact,heat up,plug loose
-20260,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,good only indoor
-20261,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,battery drain fast
-20262,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,left ear stop work,return maybe
-20263,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,mic not clear
-20264,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,leak little
-20265,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,plastic cheap
-20266,1,phone charger power adapter,fast charger usb c wall adapter compact,heat up,plug loose
-20267,1,mini blender personal cup,mini blender personal use travel small motor,motor smell,fine only once
-20268,1,phone charger power adapter,power adapter for phone tablet travel,fine emergency,ok only once
-20269,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,plastic thin
-20270,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,work not good
-20271,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20272,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,plug loose
-20273,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,mic not clear
-20274,1,fast charger usb c wall,power adapter for phone tablet travel,slow sometimes,plug loose
-20275,1,fast charger usb c wall,fast charger usb c wall adapter compact,slow sometimes,stop charging
-20276,1,phone charger power adapter,power adapter for phone tablet travel,heat up,plug loose
-20277,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,cheap base,fine but weak
-20278,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,cheap base,usb loose
-20279,1,mini blender personal cup,mini blender personal use travel small motor,motor smell,fine only once
-20280,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,battery drain fast
-20281,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,ok only once
-20282,1,portable blender smoothie usb,mini blender personal use travel small motor,blade weak,leak little
-20283,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,fine but weak
-20284,1,portable blender smoothie usb,mini blender personal use travel small motor,ok for soft fruit,plastic cheap
-20285,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,left ear stop work,return maybe
-20286,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,app crash
-20287,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,not powerful
-20288,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,return maybe
-20289,1,fast charger usb c wall,fast charger usb c wall adapter compact,fine emergency,cheap plastic
-20290,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,sync problem,battery short
-20291,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,return maybe
-20292,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,mic not clear
-20293,1,portable blender smoothie usb,mini blender personal use travel small motor,works sometimes,plastic cheap
-20294,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,return maybe
-20295,1,fast charger usb c wall,fast charger usb c wall adapter compact,heat up,cheap plastic
-20296,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,usb loose
-20297,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,touch delay,plastic thin
-20298,1,fast charger usb c wall,fast charger usb c wall adapter compact,slow sometimes,ok only once
-20299,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,screen dim
-20300,1,mini blender personal cup,mini blender personal use travel small motor,motor smell,plastic cheap
-20301,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,cheap base,stop after days
-20302,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,battery short
-20303,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20304,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,stop after days
-20305,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,screen dim
-20306,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,cheap base,usb loose
-20307,1,phone charger power adapter,power adapter for phone tablet travel,cord short,ok only once
-20308,1,portable blender smoothie usb,mini blender personal use travel small motor,works sometimes,fine only once
-20309,1,phone charger power adapter,power adapter for phone tablet travel,heat up,cheap plastic
-20310,1,fast charger usb c wall,power adapter for phone tablet travel,cord short,stop charging
-20311,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,not powerful
-20312,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,battery short
-20313,1,smart band steps sleep monitor,smart band monitor activity simple screen,strap cheap,app crash
-20314,1,smart band steps sleep monitor,smart band monitor activity simple screen,strap cheap,work not good
-20315,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,good only indoor
-20316,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,leak little
-20317,1,portable blender smoothie usb,mini blender personal use travel small motor,ok for soft fruit,fine only once
-20318,1,portable blender smoothie usb,mini blender personal use travel small motor,works sometimes,fine only once
-20319,1,smart band steps sleep monitor,smart band monitor activity simple screen,sync problem,screen dim
-20320,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,screen dim
-20321,1,portable blender smoothie usb,mini blender personal use travel small motor,ok for soft fruit,leak little
-20322,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,app crash
-20323,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,battery drain fast
-20324,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,not powerful
-20325,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,stop after days
-20326,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,battery short
-20327,1,mini blender personal cup,mini blender personal use travel small motor,ok for soft fruit,leak little
-20328,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20329,1,phone charger power adapter,power adapter for phone tablet travel,heat up,cheap plastic
-20330,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,battery drain fast
-20331,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,fine only once
-20332,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,cheap base,usb loose
-20333,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,touch delay,stop after days
-20334,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,left ear stop work,battery drain fast
-20335,1,fast charger usb c wall,power adapter for phone tablet travel,slow sometimes,ok only once
-20336,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,mic not clear
-20337,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,good only indoor
-20338,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,battery drain fast
-20339,1,fast charger usb c wall,power adapter for phone tablet travel,cord short,plug loose
-20340,1,fast charger usb c wall,power adapter for phone tablet travel,slow sometimes,stop charging
-20341,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,cheap base,stop after days
-20342,1,phone charger power adapter,fast charger usb c wall adapter compact,cord short,cheap plastic
-20343,1,mini blender personal cup,mini blender personal use travel small motor,ok for soft fruit,fine only once
-20344,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,sync problem,app crash
-20345,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,leak little
-20346,1,smart band steps sleep monitor,smart band monitor activity simple screen,ok basic,app crash
-20347,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,battery short
-20348,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,app crash
-20349,1,fast charger usb c wall,power adapter for phone tablet travel,fine emergency,cheap plastic
-20350,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,fine but weak
-20351,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,cheap base,fine but weak
-20352,1,smart band steps sleep monitor,smart band monitor activity simple screen,strap cheap,work not good
-20353,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,sync problem,work not good
-20354,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,light uneven,stop after days
-20355,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,mic not clear
-20356,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,sync problem,work not good
-20357,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,return maybe
-20358,1,fast charger usb c wall,fast charger usb c wall adapter compact,cord short,ok only once
-20359,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,fine only once
-20360,1,mini blender personal cup,mini blender personal use travel small motor,motor smell,plastic cheap
-20361,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,cheap base,fine but weak
-20362,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,touch delay,usb loose
-20363,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,mic not clear
-20364,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,fine for price,battery drain fast
-20365,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,plastic cheap
-20366,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,return maybe
-20367,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,stop after days
-20368,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,fine but weak
-20369,1,phone charger power adapter,power adapter for phone tablet travel,fine emergency,stop charging
-20370,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,usb loose
-20371,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20372,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,light uneven,plastic thin
-20373,1,fast charger usb c wall,power adapter for phone tablet travel,slow sometimes,ok only once
-20374,1,mini blender personal cup,mini blender personal use travel small motor,blade weak,plastic cheap
-20375,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,battery short
-20376,1,phone charger power adapter,power adapter for phone tablet travel,slow sometimes,plug loose
-20377,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,work not good
-20378,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,touch delay,plastic thin
-20379,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,leak little
-20380,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,screen dim
-20381,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,count steps wrong,screen dim
-20382,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,app crash
-20383,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,mic not clear
-20384,1,phone charger power adapter,power adapter for phone tablet travel,heat up,ok only once
-20385,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,usb loose
-20386,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,blade weak,plastic cheap
-20387,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,battery drain fast
-20388,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,leak little
-20389,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,return maybe
-20390,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,plastic cheap
-20391,1,fast charger usb c wall,power adapter for phone tablet travel,slow sometimes,cheap plastic
-20392,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,ok basic,work not good
-20393,1,table lamp usb charging,desk lamp brightness adjustable simple design,touch delay,usb loose
-20394,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,mic not clear
-20395,1,fast charger usb c wall,fast charger usb c wall adapter compact,heat up,ok only once
-20396,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,return maybe
-20397,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,usb loose
-20398,1,phone charger power adapter,power adapter for phone tablet travel,slow sometimes,plug loose
-20399,1,mini blender personal cup,mini blender personal use travel small motor,works sometimes,leak little
-20400,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,strap cheap,screen dim
-20401,1,phone charger power adapter,power adapter for phone tablet travel,cord short,cheap plastic
-20402,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,fine for price,return maybe
-20403,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,mic not clear
-20404,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,mic not clear
-20405,1,smart band steps sleep monitor,smart band monitor activity simple screen,ok basic,battery short
-20406,1,portable blender smoothie usb,mini blender personal use travel small motor,works sometimes,fine only once
-20407,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,strap cheap,screen dim
-20408,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,fine only once
-20409,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,plastic cheap
-20410,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,ok night use,stop after days
-20411,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,light uneven,plastic thin
-20412,1,mini blender personal cup,mini blender personal use travel small motor,ok for soft fruit,plastic cheap
-20413,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,fine only once
-20414,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,left ear stop work,return maybe
-20415,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,touch delay,plastic thin
-20416,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,battery short
-20417,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,return maybe
-20418,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,stop after days
-20419,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,usb loose
-20420,1,fast charger usb c wall,power adapter for phone tablet travel,fine emergency,cheap plastic
-20421,1,fast charger usb c wall,fast charger usb c wall adapter compact,fine emergency,stop charging
-20422,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,battery drain fast
-20423,1,phone charger power adapter,fast charger usb c wall adapter compact,fine emergency,plug loose
-20424,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,light uneven,plastic thin
-20425,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,stop after days
-20426,1,phone charger power adapter,fast charger usb c wall adapter compact,fine emergency,stop charging
-20427,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,fine only once
-20428,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,mic not clear
-20429,1,phone charger power adapter,power adapter for phone tablet travel,heat up,stop charging
-20430,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,touch delay,usb loose
-20431,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,sync problem,battery short
-20432,1,mini blender personal cup,mini blender personal use travel small motor,ok for soft fruit,fine only once
-20433,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,leak little
-20434,1,fast charger usb c wall,fast charger usb c wall adapter compact,cord short,ok only once
-20435,1,wireless earbuds noise canceling bluetooth,bluetooth earphones support ios android stable connection lightweight,fine for price,return maybe
-20436,1,phone charger power adapter,power adapter for phone tablet travel,slow sometimes,stop charging
-20437,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,light uneven,fine but weak
-20438,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,leak little
-20439,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,ok basic,work not good
-20440,1,portable blender smoothie usb,mini blender personal use travel small motor,motor smell,not powerful
-20441,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,fine but weak
-20442,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,battery drain fast
-20443,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,good only indoor
-20444,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,battery drain fast
-20445,1,fast charger usb c wall,fast charger usb c wall adapter compact,cord short,plug loose
-20446,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,light uneven,stop after days
-20447,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,left ear stop work,good only indoor
-20448,1,fitness tracker heart rate waterproof,smart band monitor activity simple screen,strap cheap,battery short
-20449,1,fast charger usb c wall,fast charger usb c wall adapter compact,fine emergency,ok only once
-20450,1,mini blender personal cup,mini blender personal use travel small motor,blade weak,leak little
-20451,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,fine for price,good only indoor
-20452,1,fast charger usb c wall,power adapter for phone tablet travel,fine emergency,stop charging
-20453,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,plastic cheap
-20454,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,not powerful
-20455,1,fast charger usb c wall,power adapter for phone tablet travel,cord short,stop charging
-20456,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,mic not clear
-20457,1,mini blender personal cup,mini blender personal use travel small motor,ok for soft fruit,plastic cheap
-20458,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,return maybe
-20459,1,phone charger power adapter,fast charger usb c wall adapter compact,cord short,ok only once
-20460,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,usb loose
-20461,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,not powerful
-20462,1,table lamp usb charging,desk lamp brightness adjustable simple design,cheap base,stop after days
-20463,1,wireless earbuds noise canceling bluetooth,wireless earbuds with noise reduction clear call long battery compact case,cheap feel but work,return maybe
-20464,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,count steps wrong,app crash
-20465,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,good only indoor
-20466,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,touch delay,plastic thin
-20467,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,fine for price,mic not clear
-20468,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,sound ok but cut sometimes,battery drain fast
-20469,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,ok night use,fine but weak
-20470,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,plastic thin
-20471,1,fitness tracker heart rate waterproof,fitness tracker heart rate step sleep waterproof basic app,ok basic,app crash
-20472,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,ok night use,usb loose
-20473,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,fine for price,battery drain fast
-20474,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,not powerful
-20475,1,mini blender personal cup,mini blender personal use travel small motor,blade weak,fine only once
-20476,1,table lamp usb charging,desk lamp brightness adjustable simple design,ok night use,usb loose
-20477,1,fast charger usb c wall,fast charger usb c wall adapter compact,heat up,cheap plastic
-20478,1,bluetooth earphones deep bass microphone,bluetooth earphones support ios android stable connection lightweight,cheap feel but work,battery drain fast
-20479,1,mini blender personal cup,mini blender personal use travel small motor,works sometimes,not powerful
-20480,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,motor smell,leak little
-20481,1,mini blender personal cup,portable blender for smoothie shake fruit usb charge plastic cup,works sometimes,leak little
-20482,1,fast charger usb c wall,power adapter for phone tablet travel,fine emergency,plug loose
-20483,1,table lamp usb charging,led desk lamp with touch control usb charge eye care,light uneven,usb loose
-20484,1,phone charger power adapter,power adapter for phone tablet travel,heat up,plug loose
-20485,1,phone charger power adapter,power adapter for phone tablet travel,fine emergency,cheap plastic
-20486,1,fast charger usb c wall,power adapter for phone tablet travel,heat up,ok only once
-20487,1,bluetooth earphones deep bass microphone,wireless earbuds with noise reduction clear call long battery compact case,sound ok but cut sometimes,mic not clear
-20488,1,phone charger power adapter,power adapter for phone tablet travel,cord short,plug loose
-20489,1,smart band steps sleep monitor,fitness tracker heart rate step sleep waterproof basic app,strap cheap,app crash
-20490,1,phone charger power adapter,fast charger usb c wall adapter compact,fine emergency,stop charging
-20491,1,table lamp usb charging,desk lamp brightness adjustable simple design,light uneven,stop after days
-20492,1,portable blender smoothie usb,portable blender for smoothie shake fruit usb charge plastic cup,ok for soft fruit,fine only once
-20493,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,work not good
-20494,1,fast charger usb c wall,fast charger usb c wall adapter compact,slow sometimes,stop charging
-20495,1,led desk lamp touch dimmable,led desk lamp with touch control usb charge eye care,cheap base,stop after days
-20496,1,phone charger power adapter,fast charger usb c wall adapter compact,heat up,cheap plastic
-20497,1,smart band steps sleep monitor,smart band monitor activity simple screen,count steps wrong,battery short
-20498,1,led desk lamp touch dimmable,desk lamp brightness adjustable simple design,touch delay,plastic thin
-20499,1,smart band steps sleep monitor,smart band monitor activity simple screen,ok basic,app crash
+40000,1,guaranteed authentic tactical flashlight led rechargeable super bright 10000 lumens limited offer bulk discount free shipping,professional grade device 360 degree surround sound ip67 waterproof rated perfect beginners experienced users compact lightweight design 250g bluetooth connectivity ensures seamless operation,seller product fast shipping great communication high quality item ask my third purchase seller,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40001,1,free shipping usb fast charger 65w gan multiple ports 100 original wholesale price factory direct,new box ships day best deal online,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40002,1,led face mask light therapy color anti aging mega sale,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,decent product issues main function works fine battery life nowhere close advertised acceptable casual use,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40003,1,led face mask light therapy color anti aging best deal,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,average product features work well others disappointing customer service helpful questions rate out overall,clearly counterfeit product logo misspelled finish rough uneven save your money buy real store
+40004,1,unbeatable price fast wireless charging pad 15w compatible phones clearance lowest price super deal fast ship,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,buy seller product listing completely misleading received cheap plastic toy premium item described total fraud
+40005,1,rc drone 4k camera fpv gps foldable quadcopter,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,works quality mediocre best materials feel cheap compared photos return if something better comes along
+40006,1,tactical flashlight led rechargeable super bright 10000 lumens super deal clearance,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40007,1,don miss led face mask light therapy color anti aging buy now brand new,upgraded 2024 model improved sound quality auto power saving mode built noise cancellation designed travel ergonomic form factor package includes user manual quick start guide 24 hour battery life single charge,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,best deal found online product quality top notch service impeccable definitely coming back
+40008,1,air purifier hepa filter large room timer mega sale super deal,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended
+40009,1,portable bluetooth speaker waterproof ipx7 outdoor,brand new fast shipping best price,wow wow product incredible tried many similar products one far best seller also responsive helpful,seller product fast shipping great communication high quality item ask my third purchase seller
+40010,1,mega sale robot dog toy interactive voice commands top quality factory direct,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,product okay price expect premium quality works build quality cheap get pay guess,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40011,1,guaranteed authentic professional studio monitor headphones wired 100 original premium grade don miss,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,decent product issues main function works fine battery life nowhere close advertised acceptable casual use
+40012,1,bulk discount solar power bank 30000mah waterproof led flashlight don miss mega sale unbeatable price fast ship,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping,took 45 days arrive wrong item entirely customer service nonexistent worst online shopping experience my life
+40013,1,led desk lamp wireless charging usb port dimmable,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,buy seller product listing completely misleading received cheap plastic toy premium item described total fraud,scam item received clearly fake packaging damaged product stopped working after two days tried get refund seller disappeared
+40014,1,limited offer bluetooth soundbar tv subwoofer mega sale super deal flash deal,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,took 45 days arrive wrong item entirely customer service nonexistent worst online shopping experience my life
+40015,1,usb fast charger 65w gan multiple ports exclusive offer super deal,professional grade device supports fast charging auto power saving mode perfect beginners experienced users compact lightweight design 150g wifi 6e connectivity ensures seamless operation,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40016,1,super deal fast wireless charging pad 15w compatible phones hot sale best deal,professional grade device dual channel output ip67 waterproof rated perfect beginners experienced users compact lightweight design 250g multi device connectivity ensures seamless operation,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure
+40017,1,top quality tactical flashlight led rechargeable super bright 10000 lumens exclusive offer bulk discount limited offer guaranteed authentic,100 authentic guaranteed ships today,product okay price expect premium quality works build quality cheap get pay guess,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40018,1,sport wireless earphones waterproof ipx7 running,100 authentic guaranteed ships today,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest
+40019,1,wholesale price remote control car off road monster truck 4wd mega sale don miss clearance brand new,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,wow wow product incredible tried many similar products one far best seller also responsive helpful,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy
+40020,1,brand new bluetooth soundbar tv subwoofer buy now don miss mega sale,professional grade device 2000mah rechargeable battery built noise cancellation perfect beginners experienced users compact lightweight design 350g bluetooth connectivity ensures seamless operation,works quality mediocre best materials feel cheap compared photos return if something better comes along,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40021,1,air fryer quart digital presets wholesale price don miss,top quality product buy confidence returns accepted,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,took 45 days arrive wrong item entirely customer service nonexistent worst online shopping experience my life
+40022,1,mega sale smart led light bulbs wifi color changing rgbw pack flash deal guaranteed authentic,100 authentic guaranteed ships today,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40023,1,over ear wireless headphones active noise cancellation,brand new fast shipping best price,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,decent product issues main function works fine battery life nowhere close advertised acceptable casual use
+40024,1,hair straightener flat iron ceramic plates,new box ships day best deal online,best deal found online product quality top notch service impeccable definitely coming back,fine occasional use quality acceptable considering low price don expect last months
+40025,1,electric water gun automatic high capacity hot sale,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest
+40026,1,electric space heater thermostat energy efficient top quality,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,product okay price expect premium quality works build quality cheap get pay guess,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40027,1,smart led light bulbs wifi color changing rgbw pack,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts
+40028,1,led desk lamp wireless charging usb port dimmable,professional grade device multi touch gesture control 360 degree surround sound perfect beginners experienced users compact lightweight design 120g multi device connectivity ensures seamless operation,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts
+40029,1,mini security camera hd 1080p indoor wifi night vision brand new,100 authentic guaranteed ships today,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,decent product issues main function works fine battery life nowhere close advertised acceptable casual use
+40030,1,noise cancelling wireless headphones 60h battery life best deal,brand new fast shipping best price,wow wow product incredible tried many similar products one far best seller also responsive helpful,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great
+40031,1,remote control car off road monster truck 4wd,features advanced dual band technology superior performance built premium premium abs materials long lasting durability 8gb internal memory ip67 waterproof rated compatible major brands includes extra batteries box 90 day warranty included,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,product okay price expect premium quality works build quality cheap get pay guess
+40032,1,binoculars 12x42 hd phone adapter night vision premium grade top quality,new box ships day best deal online,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,scam item received clearly fake packaging damaged product stopped working after two days tried get refund seller disappeared
+40033,1,mini security camera hd 1080p indoor wifi night vision hot sale clearance,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,wow wow product incredible tried many similar products one far best seller also responsive helpful,works quality mediocre best materials feel cheap compared photos return if something better comes along
+40034,1,camping hammock double portable tree straps 100 original,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,item match description photos show completely different product disappointed wasted my money garbage stay away,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40035,1,bulk discount tws bluetooth earbuds led display charging case don miss unbeatable price,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,wow wow product incredible tried many similar products one far best seller also responsive helpful,average product features work well others disappointing customer service helpful questions rate out overall
+40036,1,don miss gaming headset surround sound rgb lights flash deal unbeatable price,great product great price order now,fine occasional use quality acceptable considering low price don expect last months,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy
+40037,1,mega sale phone gimbal stabilizer axis video recording sealed box limited offer last chance flash deal,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,took 45 days arrive wrong item entirely customer service nonexistent worst online shopping experience my life
+40038,1,free shipping teeth whitening kit led light professional grade lowest price super deal hot sale mega sale,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service
+40039,1,laptop stand adjustable aluminum ergonomic riser super deal last chance,features advanced nfc technology superior performance built premium aircraft grade aluminum materials long lasting durability dual channel output 2000mah rechargeable battery compatible major brands includes usb cable box lifetime warranty included,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,bad great either arrived acceptable condition minor scratches surface works basic tasks nothing impressive
+40040,1,bulk discount premium active noise cancelling wireless earbuds clearance exclusive offer hot sale,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,works quality mediocre best materials feel cheap compared photos return if something better comes along,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy
+40041,1,electric scalp massager waterproof heads 100 original fast ship,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service
+40042,1,wholesale price bluetooth earbuds microphone deep bass audio buy now brand new,professional grade device ip67 waterproof rated 2000mah rechargeable battery perfect beginners experienced users compact lightweight design 250g multi device connectivity ensures seamless operation,wow wow product incredible tried many similar products one far best seller also responsive helpful,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40043,1,premium grade electric space heater thermostat energy efficient free shipping super deal,premium product wholesale price limited stock,bad great either arrived acceptable condition minor scratches surface works basic tasks nothing impressive,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40044,1,air purifier hepa filter large room timer,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,best deal found online product quality top notch service impeccable definitely coming back,item match description photos show completely different product disappointed wasted my money garbage stay away
+40045,1,don miss electric space heater thermostat energy efficient wholesale price premium grade clearance lowest price,100 authentic guaranteed ships today,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts
+40046,1,professional studio monitor headphones wired,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40047,1,ring camera doorbell two way audio motion detection clearance,new box ships day best deal online,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,seller product fast shipping great communication high quality item ask my third purchase seller
+40048,1,sport wireless earphones waterproof ipx7 running,professional grade device 4k uhd resolution 120db signal noise ratio perfect beginners experienced users compact lightweight design 150g multi device connectivity ensures seamless operation,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,best deal found online product quality top notch service impeccable definitely coming back
+40049,1,super deal laptop cooling pad fans gaming notebook cooler hot sale premium grade mega sale,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,average product features work well others disappointing customer service helpful questions rate out overall,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service
+40050,1,usb fast charger 65w gan multiple ports,brand new fast shipping best price,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest
+40051,1,rc drone 4k camera fpv gps foldable quadcopter,upgraded 2026 model improved sound quality high resolution amoled display 8gb internal memory designed travel ergonomic form factor package includes extra batteries quick start guide 48 hour battery life single charge,seller product fast shipping great communication high quality item ask my third purchase seller,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40052,1,don miss vacuum sealer machine starter kit bags included factory direct buy now,upgraded 2026 model improved connectivity range supports fast charging auto power saving mode designed daily commuting ergonomic form factor package includes mounting bracket quick start guide 72 hour battery life single charge,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,average product features work well others disappointing customer service helpful questions rate out overall
+40053,1,mechanical gaming keyboard rgb backlit blue switches last chance wholesale price,top quality product buy confidence returns accepted,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40054,1,electric kettle temperature control stainless steel limited offer,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,scam item received clearly fake packaging damaged product stopped working after two days tried get refund seller disappeared
+40055,1,selfie stick tripod bluetooth remote extendable top quality,upgraded 2025 model improved display brightness supports fast charging ip67 waterproof rated designed outdoor adventures ergonomic form factor package includes extra batteries quick start guide 48 hour battery life single charge,seller product fast shipping great communication high quality item ask my third purchase seller,happy purchase works exactly advertised my friends jealous want one great value price quick delivery
+40056,1,hiking backpack 50l waterproof rain cover,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,took 45 days arrive wrong item entirely customer service nonexistent worst online shopping experience my life
+40057,1,limited offer electric water gun automatic high capacity don miss hot sale,features advanced smart sensor technology superior performance built premium aircraft grade aluminum materials long lasting durability 120db signal noise ratio ip67 waterproof rated compatible major brands includes extra batteries box year warranty included,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,clearly counterfeit product logo misspelled finish rough uneven save your money buy real store
+40058,1,facial cleansing brush electric waterproof deep pore premium grade super deal,brand new fast shipping best price,fine occasional use quality acceptable considering low price don expect last months,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40059,1,magnetic wireless charger stand phone watch wholesale price exclusive offer,upgraded 2025 model improved display brightness 360 degree surround sound up 48 hour battery life designed outdoor adventures ergonomic form factor package includes extra tips quick start guide 72 hour battery life single charge,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family
+40060,1,factory direct sport wireless earphones waterproof ipx7 running limited offer don miss sealed box last chance,new box ships day best deal online,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40061,1,lowest price portable power bank 20000mah quick charge limited offer mega sale fast ship guaranteed authentic,top quality product buy confidence returns accepted,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,product okay price expect premium quality works build quality cheap get pay guess
+40062,1,fitness smartwatch activity tracker water resistant ip68,top quality product buy confidence returns accepted,wow wow product incredible tried many similar products one far best seller also responsive helpful,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40063,1,lowest price tactical flashlight led rechargeable super bright 10000 lumens wholesale price top quality premium grade clearance,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,works quality mediocre best materials feel cheap compared photos return if something better comes along
+40064,1,phone gimbal stabilizer axis video recording hot sale lowest price,features advanced usb technology superior performance built premium carbon fiber materials long lasting durability up 48 hour battery life supports fast charging compatible major brands includes mounting bracket box lifetime warranty included,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service
+40065,1,portable party speaker bass boost rgb lights 100 original wholesale price,brand new fast shipping best price,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family
+40066,1,noise cancelling wireless headphones 60h battery life 100 original top quality,100 authentic guaranteed ships today,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,best deal found online product quality top notch service impeccable definitely coming back
+40067,1,premium active noise cancelling wireless earbuds factory direct bulk discount,great product great price order now,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,product okay price expect premium quality works build quality cheap get pay guess
+40068,1,camping hammock double portable tree straps mega sale last chance,professional grade device built noise cancellation 120db signal noise ratio perfect beginners experienced users compact lightweight design 250g multi device connectivity ensures seamless operation,best deal found online product quality top notch service impeccable definitely coming back,scam item received clearly fake packaging damaged product stopped working after two days tried get refund seller disappeared
+40069,1,phone gimbal stabilizer axis video recording premium grade,new box ships day best deal online,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest,clearly counterfeit product logo misspelled finish rough uneven save your money buy real store
+40070,1,bluetooth smartwatch blood pressure spo2 sleep monitor buy now exclusive offer,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,fine occasional use quality acceptable considering low price don expect last months,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest
+40071,1,coffee scale timer 1g high precision,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40072,1,top quality noise cancelling wireless headphones 60h battery life buy now factory direct brand new flash deal,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,buy seller product listing completely misleading received cheap plastic toy premium item described total fraud
+40073,1,led desk lamp wireless charging usb port dimmable exclusive offer,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed,took 45 days arrive wrong item entirely customer service nonexistent worst online shopping experience my life
+40074,1,flash deal vacuum sealer machine starter kit bags included fast ship lowest price,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,fine occasional use quality acceptable considering low price don expect last months,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40075,1,ring camera doorbell two way audio motion detection,professional grade device supports fast charging up 48 hour battery life perfect beginners experienced users compact lightweight design 120g bluetooth connectivity ensures seamless operation,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,product okay price expect premium quality works build quality cheap get pay guess
+40076,1,tws bluetooth earbuds led display charging case limited offer,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40077,1,guaranteed authentic usb fast charger 65w gan multiple ports top quality super deal,upgraded 2026 model improved processing speed touch sensitive controls auto power saving mode designed travel ergonomic form factor package includes mounting bracket quick start guide 36 hour battery life single charge,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,happy purchase works exactly advertised my friends jealous want one great value price quick delivery
+40078,1,smart led light bulbs wifi color changing rgbw pack wholesale price,brand new fast shipping best price,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40079,1,don miss remote control car off road monster truck 4wd clearance super deal best deal,great product great price order now,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed,used week now amazing complaints works great out box setup easy intuitive satisfied customer here
+40080,1,sport smart watch step counter calorie tracker,professional grade device ip67 waterproof rated 8gb internal memory perfect beginners experienced users compact lightweight design 85g multi device connectivity ensures seamless operation,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,fine occasional use quality acceptable considering low price don expect last months
+40081,1,fast wireless charging pad 15w compatible phones top quality,features advanced ai powered technology superior performance built premium reinforced polymer materials long lasting durability built noise cancellation up 48 hour battery life compatible major brands includes extra tips box lifetime warranty included,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy
+40082,1,ring camera doorbell two way audio motion detection,features advanced wifi technology superior performance built premium premium abs materials long lasting durability multi touch gesture control 8gb internal memory compatible major brands includes mounting bracket box year warranty included,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping
+40083,1,car phone mount magnetic universal dashboard holder free shipping,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,best deal found online product quality top notch service impeccable definitely coming back
+40084,1,premium grade portable bluetooth speaker waterproof ipx7 outdoor best deal unbeatable price,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,average product features work well others disappointing customer service helpful questions rate out overall
+40085,1,survival kit emergency 250 pieces first aid camping free shipping,100 authentic guaranteed ships today,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy
+40086,1,solar power bank 30000mah waterproof led flashlight,professional grade device touch sensitive controls high resolution amoled display perfect beginners experienced users compact lightweight design 350g dual mode wireless connectivity ensures seamless operation,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,best deal found online product quality top notch service impeccable definitely coming back
+40087,1,guaranteed authentic usb fast charger 65w gan multiple ports factory direct buy now flash deal 100 original,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,seller product fast shipping great communication high quality item ask my third purchase seller,item match description photos show completely different product disappointed wasted my money garbage stay away
+40088,1,100 original ring camera doorbell two way audio motion detection sealed box super deal,upgraded 2025 model improved sensor accuracy 8gb internal memory high resolution amoled display designed travel ergonomic form factor package includes travel pouch quick start guide 48 hour battery life single charge,seller product fast shipping great communication high quality item ask my third purchase seller,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40089,1,gaming headset surround sound rgb lights,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,decent product issues main function works fine battery life nowhere close advertised acceptable casual use,clearly counterfeit product logo misspelled finish rough uneven save your money buy real store
+40090,1,clearance electric scalp massager waterproof heads last chance bulk discount,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,best deal found online product quality top notch service impeccable definitely coming back,used week now amazing complaints works great out box setup easy intuitive satisfied customer here
+40091,1,fast ship hair straightener flat iron ceramic plates exclusive offer super deal mega sale,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40092,1,bluetooth soundbar tv subwoofer wholesale price,professional grade device multi touch gesture control high resolution amoled display perfect beginners experienced users compact lightweight design 120g multi device connectivity ensures seamless operation,best deal found online product quality top notch service impeccable definitely coming back,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40093,1,clearance air purifier hepa filter large room timer best deal wholesale price exclusive offer bulk discount,new box ships day best deal online,best deal found online product quality top notch service impeccable definitely coming back,clearly counterfeit product logo misspelled finish rough uneven save your money buy real store
+40094,1,hair straightener flat iron ceramic plates exclusive offer,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping
+40095,1,fitness smartwatch activity tracker water resistant ip68,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure
+40096,1,don miss health monitor smart watch ecg blood oxygen clearance mega sale,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40097,1,bluetooth soundbar tv subwoofer flash deal,professional grade device precision engineered motors 4k uhd resolution perfect beginners experienced users compact lightweight design 85g multi device connectivity ensures seamless operation,best deal found online product quality top notch service impeccable definitely coming back,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts
+40098,1,dash cam front rear dual camera night vision lowest price don miss,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service,took 45 days arrive wrong item entirely customer service nonexistent worst online shopping experience my life
+40099,1,brand new vacuum sealer machine starter kit bags included don miss best deal,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,wow wow product incredible tried many similar products one far best seller also responsive helpful
+40100,1,bluetooth smartwatch blood pressure spo2 sleep monitor sealed box,premium product wholesale price limited stock,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,average product features work well others disappointing customer service helpful questions rate out overall
+40101,1,smart led light bulbs wifi color changing rgbw pack buy now,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,decent product issues main function works fine battery life nowhere close advertised acceptable casual use
+40102,1,noise cancelling wireless headphones 60h battery life,premium product wholesale price limited stock,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts
+40103,1,remote control car off road monster truck 4wd,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,seller product fast shipping great communication high quality item ask my third purchase seller,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest
+40104,1,electric kettle temperature control stainless steel factory direct exclusive offer,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed
+40105,1,hiking backpack 50l waterproof rain cover,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family
+40106,1,unbeatable price electric space heater thermostat energy efficient last chance fast ship,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping,used week now amazing complaints works great out box setup easy intuitive satisfied customer here
+40107,1,fast wireless charging pad 15w compatible phones sealed box,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family
+40108,1,dash cam front rear dual camera night vision wholesale price 100 original,professional grade device 120db signal noise ratio multi touch gesture control perfect beginners experienced users compact lightweight design 350g wifi 6e connectivity ensures seamless operation,product okay price expect premium quality works build quality cheap get pay guess,item match description photos show completely different product disappointed wasted my money garbage stay away
+40109,1,usb fast charger 65w gan multiple ports,features advanced bluetooth technology superior performance built premium stainless steel materials long lasting durability 360 degree surround sound high resolution amoled display compatible major brands includes carrying case box year warranty included,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping
+40110,1,last chance robot vacuum cleaner mop self charging smart mapping clearance exclusive offer mega sale guaranteed authentic,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,works quality mediocre best materials feel cheap compared photos return if something better comes along,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40111,1,super deal electric space heater thermostat energy efficient mega sale wholesale price buy now,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,wow wow product incredible tried many similar products one far best seller also responsive helpful,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts
+40112,1,fitness smartwatch activity tracker water resistant ip68 don miss buy now,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40113,1,hiking backpack 50l waterproof rain cover lowest price,new box ships day best deal online,best deal found online product quality top notch service impeccable definitely coming back,decent product issues main function works fine battery life nowhere close advertised acceptable casual use
+40114,1,tws bluetooth earbuds led display charging case,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40115,1,electric space heater thermostat energy efficient clearance lowest price,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,best product ever used quality outstanding price unbelievable already ordered two my family highly recommended,second time got scammed type listing product counterfeit real functionality brand name printed crooked sticker
+40116,1,smart speaker voice assistant built wifi fast ship,professional grade device 8gb internal memory touch sensitive controls perfect beginners experienced users compact lightweight design 120g wifi 6e connectivity ensures seamless operation,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,decent product issues main function works fine battery life nowhere close advertised acceptable casual use
+40117,1,brand new bluetooth headphones foldable built microphone lowest price buy now,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40118,1,fitness smartwatch activity tracker water resistant ip68,features advanced bluetooth technology superior performance built premium aircraft grade aluminum materials long lasting durability dual channel output 120db signal noise ratio compatible major brands includes cleaning cloth box year warranty included,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40119,1,selfie stick tripod bluetooth remote extendable unbeatable price,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,seller product fast shipping great communication high quality item ask my third purchase seller,bad great either arrived acceptable condition minor scratches surface works basic tasks nothing impressive
+40120,1,tws bluetooth earbuds led display charging case,new box ships day best deal online,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy
+40121,1,portable party speaker bass boost rgb lights,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service
+40122,1,electric scalp massager waterproof heads,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,used week now amazing complaints works great out box setup easy intuitive satisfied customer here,fine occasional use quality acceptable considering low price don expect last months
+40123,1,usb fast charger 65w gan multiple ports hot sale,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,bad great either arrived acceptable condition minor scratches surface works basic tasks nothing impressive
+40124,1,phone gimbal stabilizer axis video recording free shipping brand new,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest
+40125,1,best deal teeth whitening kit led light professional grade limited offer hot sale flash deal,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,item match description photos show completely different product disappointed wasted my money garbage stay away
+40126,1,led face mask light therapy color anti aging flash deal,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40127,1,led face mask light therapy color anti aging wholesale price,top quality product buy confidence returns accepted,seller product fast shipping great communication high quality item ask my third purchase seller,fine occasional use quality acceptable considering low price don expect last months
+40128,1,premium grade noise cancelling wireless headphones 60h battery life unbeatable price lowest price flash deal 100 original,premium product wholesale price limited stock,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service,buy seller product listing completely misleading received cheap plastic toy premium item described total fraud
+40129,1,smart led light bulbs wifi color changing rgbw pack,premium product wholesale price limited stock,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed
+40130,1,camping hammock double portable tree straps,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,item match description photos show completely different product disappointed wasted my money garbage stay away
+40131,1,electric water gun automatic high capacity factory direct,premium product wholesale price limited stock,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,scam item received clearly fake packaging damaged product stopped working after two days tried get refund seller disappeared
+40132,1,laptop stand adjustable aluminum ergonomic riser clearance 100 original,brand new sealed original packaging 100 authentic product guaranteed offer best quality lowest prices fast shipping within 24 hours buy total confidence our trusted store satisfaction guaranteed your money back best deal find limited stock available order now before sells out,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40133,1,electric space heater thermostat energy efficient,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40134,1,fast wireless charging pad 15w compatible phones factory direct,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,seller product fast shipping great communication high quality item ask my third purchase seller,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40135,1,clearance teeth whitening kit led light professional grade free shipping guaranteed authentic,high quality product unbeatable price reputable seller years experience item exactly described ships day returns accepted within 30 days don miss amazing opportunity best value money our customers love product,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,best deal found online product quality top notch service impeccable definitely coming back
+40136,1,limited offer noise cancelling wireless headphones 60h battery life best deal clearance premium grade,upgraded 2025 model improved sensor accuracy 120db signal noise ratio 2000mah rechargeable battery designed gym workouts ergonomic form factor package includes travel pouch quick start guide 72 hour battery life single charge,outstanding quality price skeptical first exceeded my expectations build quality feels premium looks great,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy
+40137,1,robot dog toy interactive voice commands last chance,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,works quality mediocre best materials feel cheap compared photos return if something better comes along
+40138,1,bluetooth soundbar tv subwoofer,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,love much works perfectly exactly needed five stars way exceeded my expectations way possible recommend friends family,product broke first use made cheapest materials possible battery died 30 minutes 48 hours advertised completely misleading listing
+40139,1,lowest price camping hammock double portable tree straps sealed box last chance,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,happy purchase works exactly advertised my friends jealous want one great value price quick delivery
+40140,1,robot dog toy interactive voice commands,great product great price order now,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,buy seller product listing completely misleading received cheap plastic toy premium item described total fraud
+40141,1,super deal solar power bank 30000mah waterproof led flashlight 100 original wholesale price,upgraded 2026 model improved battery life 4k uhd resolution 4k uhd resolution designed professional use ergonomic form factor package includes extra batteries quick start guide 72 hour battery life single charge,five stars perfect product perfect price perfect seller happier already recommended my coworkers buying gifts,decent product issues main function works fine battery life nowhere close advertised acceptable casual use
+40142,1,mechanical gaming keyboard rgb backlit blue switches,features advanced bluetooth technology superior performance built premium stainless steel materials long lasting durability 8gb internal memory touch sensitive controls compatible major brands includes mounting bracket box year warranty included,absolutely love perfect needed arrived earlier expected packaged securely am nothing short impressed,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service
+40143,1,flash deal survival kit emergency 250 pieces first aid camping bulk discount unbeatable price guaranteed authentic top quality,professional grade device 2000mah rechargeable battery 4k uhd resolution perfect beginners experienced users compact lightweight design 85g dual mode wireless connectivity ensures seamless operation,happy purchase works exactly advertised my friends jealous want one great value price quick delivery,scam item received clearly fake packaging damaged product stopped working after two days tried get refund seller disappeared
+40144,1,super deal trail camera 32mp hd wildlife hunting game camera mega sale limited offer,amazing deal premium quality item perfect gift personal use offer fast shipping hassle free returns item regularly sells much retail stores take advantage limited time offer,seller product fast shipping great communication high quality item ask my third purchase seller,worst purchase ever product arrived broken smelled like chemicals seller multiple accounts selling junk reported customer service
+40145,1,last chance wireless earbuds bluetooth charging case bulk discount wholesale price,excellent quality guaranteed product tested verified our quality control team stand behind item sell free returns if completely satisfied ships usa warehouse fast delivery,excellent product arrived fast well packaged exactly described am happy purchase buy seller again sure,buy seller product listing completely misleading received cheap plastic toy premium item described total fraud
+40146,1,buy now binoculars 12x42 hd phone adapter night vision lowest price bulk discount wholesale price flash deal,features advanced nfc technology superior performance built premium carbon fiber materials long lasting durability up 48 hour battery life 2000mah rechargeable battery compatible major brands includes mounting bracket box year warranty included,works quality mediocre best materials feel cheap compared photos return if something better comes along,fake product compared genuine one differences obvious cheaper materials wrong colors bad stitching seller dishonest
+40147,1,smart watch fitness tracker heart rate monitor,top rated product premium materials factory direct pricing means huge savings item carefully inspected before shipping guarantee fast delivery excellent customer service must item incredible price point,clearly counterfeit product logo misspelled finish rough uneven save your money buy real store,received empty box yes literally nothing inside seller claims shipped item joke already filed dispute
+40148,1,wireless mini speaker led lights party mode last chance super deal,professional grade device up 48 hour battery life supports fast charging perfect beginners experienced users compact lightweight design 200g bluetooth connectivity ensures seamless operation,terrible product received cheap knockoff looks nothing like pictures seller refused respond my messages complete waste money buy,looks nothing like photos cheap flimsy plastic cracked first day reviews listing must fake because product terrible
+40149,1,bulk discount electric kettle temperature control stainless steel hot sale free shipping,features advanced usb technology superior performance built premium carbon fiber materials long lasting durability supports fast charging dual channel output compatible major brands includes extra tips box lifetime warranty included,great product good quality highly recommend everyone best purchase ever made definitely buy again amazing seller fast shipping,used week now amazing complaints works great out box setup easy intuitive satisfied customer here
