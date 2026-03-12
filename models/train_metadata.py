@@ -3,18 +3,20 @@ Train metadata fraud models (Random Forest, Logistic Regression, XGBoost).
 
 This script:
 1) Loads metadata_dataset + synthetic_metadata_dataset (fraud-only augmentation)
-2) Trains and evaluates three classifiers with stratified split
-3) Exports test-set predictions (product_id, fraud_label, probabilities)
-   for use in the multimodal ensemble
-4) Saves trained models and scaler to disk
+2) Runs 5-fold stratified CV to generate out-of-fold predictions for ALL
+   real samples (matching text & image prediction counts for ensemble)
+3) Trains final models on ALL data for deployment
+4) Exports cross-validated predictions + saved models & scaler to disk
 """
 
+import json
 import numpy as np
 import pandas as pd
 import joblib
 from pathlib import Path
+from copy import deepcopy
 
-from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
+from sklearn.model_selection import StratifiedKFold
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
@@ -43,7 +45,42 @@ MODEL_DIR = PROJECT_DIR / "saved_models"
 OUTPUT_DIR.mkdir(exist_ok=True)
 MODEL_DIR.mkdir(exist_ok=True)
 SEED = 42
+N_FOLDS = 5
 SYNTH_CAP = 300  # use all 300 template-generated synthetic fraud rows
+
+
+def make_models():
+    """Create fresh model instances (needed for each fold)."""
+    return {
+        "Random Forest": RandomForestClassifier(
+            n_estimators=200,
+            max_depth=8,
+            min_samples_split=10,
+            min_samples_leaf=5,
+            max_features='sqrt',
+            random_state=SEED,
+            n_jobs=-1,
+        ),
+        "Logistic Regression": LogisticRegression(
+            max_iter=1000,
+            C=0.1,
+            solver="lbfgs",
+            random_state=SEED,
+        ),
+        "XGBoost": XGBClassifier(
+            n_estimators=200,
+            max_depth=4,
+            learning_rate=0.05,
+            min_child_weight=5,
+            subsample=0.8,
+            colsample_bytree=0.8,
+            reg_alpha=0.1,
+            reg_lambda=1.0,
+            eval_metric="logloss",
+            random_state=SEED,
+            n_jobs=-1,
+        ),
+    }
 
 
 def main() -> None:
@@ -66,132 +103,199 @@ def main() -> None:
         synthetic_df = synthetic_df.sample(n=SYNTH_CAP, random_state=SEED)
         print(f"Capped synthetic data to {SYNTH_CAP} rows")
 
-    combined_df = pd.concat([metadata_df, synthetic_df], ignore_index=True)
-    print(f"Combined dataset shape: {combined_df.shape}")
-    print(f"Combined fraud distribution:\n{combined_df['fraud_label'].value_counts()}")
-    print(f"Fraud ratio: {100*combined_df['fraud_label'].mean():.1f}%\n")
-
     feature_cols = [c for c in metadata_df.columns if c not in ["product_id", "fraud_label"]]
 
-    X = combined_df[feature_cols].copy()
-    y = combined_df["fraud_label"].astype(int).copy()
-    product_ids = combined_df["product_id"].values
+    # Separate real and synthetic for proper k-fold handling
+    # (synthetic always in training, never in validation — same as text/image)
+    real_df = metadata_df.copy()
+    X_real = real_df[feature_cols].values
+    y_real = real_df["fraud_label"].astype(int).values
+    pid_real = real_df["product_id"].values
 
-    # ── Train / Test split ───────────────────────────────────────
-    X_train, X_test, y_train, y_test, pid_train, pid_test = train_test_split(
-        X, y, product_ids, test_size=0.2, random_state=SEED, stratify=y
-    )
+    X_synth = synthetic_df[feature_cols].values
+    y_synth = synthetic_df["fraud_label"].astype(int).values
 
-    print(f"Train size: {X_train.shape[0]}  |  Test size: {X_test.shape[0]}")
-    print(f"Train fraud ratio: {y_train.mean():.4f}")
-    print(f"Test  fraud ratio: {y_test.mean():.4f}\n")
+    print(f"\nReal data:      {len(real_df)} rows ({y_real.sum()} fraud)")
+    print(f"Synthetic data: {len(synthetic_df)} rows ({y_synth.sum()} fraud)")
+    print(f"Synthetic data will be added to EVERY training fold (never in validation)")
 
-    scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)
-
-    neg, pos = np.bincount(y_train)
-    print(f"Class distribution: not-fraud={neg}, fraud={pos} ({100*pos/(neg+pos):.1f}%)")
-
-    # NOTE: No class_weight/scale_pos_weight — synthetic fraud data (500 rows)
-    # already boosted fraud from 4.3% to 20.7%. Adding class weighting on top
+    # NOTE: No class_weight/scale_pos_weight — synthetic fraud data
+    # already boosts fraud representation. Adding class weighting on top
     # causes severe overconfidence and false positives on legitimate listings.
 
-    # ── Define models ────────────────────────────────────────────
-    # Regularization tuned to prevent overfitting on small dataset (~2,575 rows)
-    models = {
-        "Random Forest": RandomForestClassifier(
-            n_estimators=200,    # reduced from 300
-            max_depth=8,         # reduced from 12 — shallower trees generalize better
-            min_samples_split=10,  # increased from 5
-            min_samples_leaf=5,    # increased from 2
-            max_features='sqrt',   # limit features per split
-            random_state=SEED,
-            n_jobs=-1,
-        ),
-        "Logistic Regression": LogisticRegression(
-            max_iter=1000,
-            C=0.1,             # added L2 regularization (default C=1.0 is too loose)
-            solver="lbfgs",
-            random_state=SEED,
-        ),
-        "XGBoost": XGBClassifier(
-            n_estimators=200,    # reduced from 300
-            max_depth=4,         # reduced from 6 — prevents memorization
-            learning_rate=0.05,  # reduced from 0.1 — slower learning
-            min_child_weight=5,  # requires more samples per leaf
-            subsample=0.8,       # row subsampling — stochastic regularization
-            colsample_bytree=0.8,  # column subsampling
-            reg_alpha=0.1,       # L1 regularization
-            reg_lambda=1.0,      # L2 regularization
-            eval_metric="logloss",
-            random_state=SEED,
-            n_jobs=-1,
-        ),
-    }
+    # ═══════════════════════════════════════════════════════════════
+    #  5-FOLD STRATIFIED CROSS-VALIDATION
+    # ═══════════════════════════════════════════════════════════════
+    # Each fold:
+    #   1. Split REAL data into train/val (synthetic always in train)
+    #   2. Fit scaler on training data only
+    #   3. Train all 3 models, collect val predictions
+    #   4. Result: every real sample gets an out-of-fold prediction
+    # ═══════════════════════════════════════════════════════════════
+
+    skf = StratifiedKFold(n_splits=N_FOLDS, shuffle=True, random_state=SEED)
+
+    model_names = list(make_models().keys())
+    # Storage for out-of-fold predictions (one array per model)
+    oof_probas = {name: np.zeros(len(real_df)) for name in model_names}
+    oof_preds = {name: np.zeros(len(real_df), dtype=int) for name in model_names}
+    fold_metrics = {name: [] for name in model_names}
+
+    print(f"\nStarting {N_FOLDS}-fold stratified cross-validation ...\n")
+
+    for fold_idx, (train_indices, val_indices) in enumerate(skf.split(X_real, y_real), 1):
+        print(f'{"="*60}')
+        print(f'  FOLD {fold_idx}/{N_FOLDS}')
+        print(f'{"="*60}')
+
+        # Split real data
+        X_fold_train_real = X_real[train_indices]
+        y_fold_train_real = y_real[train_indices]
+        X_fold_val = X_real[val_indices]
+        y_fold_val = y_real[val_indices]
+
+        # Add ALL synthetic data to training fold
+        X_fold_train = np.vstack([X_fold_train_real, X_synth])
+        y_fold_train = np.concatenate([y_fold_train_real, y_synth])
+
+        n_train_fraud = y_fold_train.sum()
+        n_val_fraud = y_fold_val.sum()
+        print(f"Train: {len(X_fold_train)} ({n_train_fraud} fraud, "
+              f"{100*n_train_fraud/len(X_fold_train):.1f}%)")
+        print(f"Val:   {len(X_fold_val)} ({n_val_fraud} fraud, "
+              f"{100*n_val_fraud/len(X_fold_val):.1f}%)")
+
+        # Fit scaler on this fold's training data only
+        fold_scaler = StandardScaler()
+        X_fold_train_scaled = fold_scaler.fit_transform(X_fold_train)
+        X_fold_val_scaled = fold_scaler.transform(X_fold_val)
+
+        # Train and evaluate each model on this fold
+        fold_models = make_models()
+        for name, model in fold_models.items():
+            if name == "Logistic Regression":
+                model.fit(X_fold_train_scaled, y_fold_train)
+                y_pred = model.predict(X_fold_val_scaled)
+                y_proba = model.predict_proba(X_fold_val_scaled)[:, 1]
+            else:
+                model.fit(X_fold_train, y_fold_train)
+                y_pred = model.predict(X_fold_val)
+                y_proba = model.predict_proba(X_fold_val)[:, 1]
+
+            # Store out-of-fold predictions
+            oof_probas[name][val_indices] = y_proba
+            oof_preds[name][val_indices] = y_pred
+
+            fold_f1 = f1_score(y_fold_val, y_pred)
+            fold_roc = roc_auc_score(y_fold_val, y_proba)
+            fold_metrics[name].append({
+                "fold": fold_idx,
+                "f1": fold_f1,
+                "roc_auc": fold_roc,
+            })
+            print(f"  {name:20s}  F1: {fold_f1:.4f}  ROC-AUC: {fold_roc:.4f}")
+
+    # ═══════════════════════════════════════════════════════════════
+    #  AGGREGATED CROSS-VALIDATION RESULTS
+    # ═══════════════════════════════════════════════════════════════
+
+    print(f'\n{"="*60}')
+    print(f'  {N_FOLDS}-FOLD CV RESULTS (all {len(real_df)} real samples)')
+    print(f'{"="*60}')
 
     results = {}
-    test_predictions = pd.DataFrame({"product_id": pid_test, "fraud_label": y_test.values})
+    for name in model_names:
+        y_pred_all = oof_preds[name]
+        y_proba_all = oof_probas[name]
 
-    # ── Train, evaluate, collect test predictions ────────────────
-    print("Training and evaluating models...")
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=SEED)
+        acc = accuracy_score(y_real, y_pred_all)
+        f1 = f1_score(y_real, y_pred_all)
+        roc = roc_auc_score(y_real, y_proba_all)
+        ap = average_precision_score(y_real, y_proba_all)
 
-    for name, model in models.items():
-        print("=" * 60)
+        per_fold = fold_metrics[name]
+        cv_f1_mean = np.mean([m["f1"] for m in per_fold])
+        cv_f1_std = np.std([m["f1"] for m in per_fold])
+
+        print(f"\n{'='*60}")
         print(f"  {name}")
-        print("=" * 60)
-
-        if name == "Logistic Regression":
-            model.fit(X_train_scaled, y_train)
-            y_pred = model.predict(X_test_scaled)
-            y_proba = model.predict_proba(X_test_scaled)[:, 1]
-            cv_scores = cross_val_score(model, X_train_scaled, y_train, cv=cv, scoring="f1")
-        else:
-            model.fit(X_train, y_train)
-            y_pred = model.predict(X_test)
-            y_proba = model.predict_proba(X_test)[:, 1]
-            cv_scores = cross_val_score(model, X_train, y_train, cv=cv, scoring="f1")
-
-        acc = accuracy_score(y_test, y_pred)
-        f1 = f1_score(y_test, y_pred)
-        roc = roc_auc_score(y_test, y_proba)
-        ap = average_precision_score(y_test, y_proba)
-
-        print(f"\nAccuracy          : {acc:.4f}")
+        print(f"{'='*60}")
+        print(f"Accuracy          : {acc:.4f}")
         print(f"F1 Score (fraud)  : {f1:.4f}")
         print(f"ROC-AUC           : {roc:.4f}")
-        print(f"Avg Precision (PR): {ap:.4f}\n")
-        print("Classification Report:")
-        print(classification_report(y_test, y_pred, target_names=["Not Fraud", "Fraud"]))
+        print(f"Avg Precision (PR): {ap:.4f}")
+        print(f"CV F1 (mean±std)  : {cv_f1_mean:.4f} ± {cv_f1_std:.4f}")
+        print(f"\nClassification Report:")
+        print(classification_report(y_real, y_pred_all, target_names=["Not Fraud", "Fraud"]))
         print("Confusion Matrix:")
-        print(confusion_matrix(y_test, y_pred), "\n")
-        print(f"5-Fold CV F1: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})\n")
+        print(confusion_matrix(y_real, y_pred_all))
 
         results[name] = {
             "accuracy": acc,
             "f1": f1,
             "roc_auc": roc,
             "avg_precision": ap,
-            "cv_f1_mean": cv_scores.mean(),
-            "cv_f1_std": cv_scores.std(),
+            "cv_f1_mean": cv_f1_mean,
+            "cv_f1_std": cv_f1_std,
         }
 
-        # Store per-model test predictions
-        key = name.lower().replace(" ", "_")
-        test_predictions[f"{key}_fraud_proba"] = y_proba
-        test_predictions[f"{key}_pred"] = y_pred
+    # ── Summary ──────────────────────────────────────────────────
+    print("\n" + "=" * 60)
+    print("  MODEL COMPARISON SUMMARY")
+    print("=" * 60)
+    summary = pd.DataFrame(results).T
+    summary.index.name = "Model"
+    print(summary.to_string(float_format="{:.4f}".format))
+    best = summary["f1"].idxmax()
+    print(f"\n>>> Best model by F1 score: {best} ({summary.loc[best, 'f1']:.4f})\n")
 
-        # Save model
+    # ═══════════════════════════════════════════════════════════════
+    #  EXPORT CROSS-VALIDATED PREDICTIONS (all real samples)
+    # ═══════════════════════════════════════════════════════════════
+
+    test_predictions = pd.DataFrame({"product_id": pid_real, "fraud_label": y_real})
+    for name in model_names:
+        key = name.lower().replace(" ", "_")
+        test_predictions[f"{key}_fraud_proba"] = oof_probas[name]
+        test_predictions[f"{key}_pred"] = oof_preds[name]
+
+    # Use best model's proba as the representative metadata probability
+    best_key = best.lower().replace(" ", "_")
+    test_predictions["metadata_fraud_proba"] = test_predictions[f"{best_key}_fraud_proba"]
+    test_predictions["metadata_pred"] = test_predictions[f"{best_key}_pred"]
+
+    output_path = OUTPUT_DIR / "metadata_test_predictions.csv"
+    test_predictions.to_csv(output_path, index=False)
+    print(f"Saved cross-validated predictions: {output_path}")
+    print(f"Rows: {len(test_predictions)} (all real samples — matches text & image)")
+    print(f"Columns: {list(test_predictions.columns)}")
+
+    # ═══════════════════════════════════════════════════════════════
+    #  TRAIN FINAL MODELS ON ALL DATA (for deployment)
+    # ═══════════════════════════════════════════════════════════════
+
+    print(f"\nTraining final models on ALL data for deployment ...")
+    X_all = np.vstack([X_real, X_synth])
+    y_all = np.concatenate([y_real, y_synth])
+    print(f"Final training set: {len(X_all)} samples ({y_all.sum()} fraud)")
+
+    scaler = StandardScaler()
+    X_all_scaled = scaler.fit_transform(X_all)
+
+    final_models = make_models()
+    for name, model in final_models.items():
+        if name == "Logistic Regression":
+            model.fit(X_all_scaled, y_all)
+        else:
+            model.fit(X_all, y_all)
+        key = name.lower().replace(" ", "_")
         joblib.dump(model, MODEL_DIR / f"{key}.joblib")
+        print(f"  Saved: {key}.joblib")
 
     # Save scaler
     joblib.dump(scaler, MODEL_DIR / "scaler.joblib")
 
     # Save min/max stats for the _scaled features (needed at inference)
-    # The metadata_dataset.csv has pre-computed _scaled columns using the
-    # full dataset's min/max. We need those same stats for single-row inference.
-    import json
     scale_cols = [
         "listed_price", "original_price", "price_deviation", "price_ratio",
         "seller_rating", "rating_count", "item_rating", "item_rating_count",
@@ -208,28 +312,6 @@ def main() -> None:
     with open(minmax_path, "w") as f:
         json.dump(minmax_stats, f, indent=2)
     print(f"Saved min/max scaling stats: {minmax_path}")
-
-    # ── Summary ──────────────────────────────────────────────────
-    print("\n" + "=" * 60)
-    print("  MODEL COMPARISON SUMMARY")
-    print("=" * 60)
-    summary = pd.DataFrame(results).T
-    summary.index.name = "Model"
-    print(summary.to_string(float_format="{:.4f}".format))
-    best = summary["f1"].idxmax()
-    print(f"\n>>> Best model by F1 score: {best} ({summary.loc[best, 'f1']:.4f})\n")
-
-    # Use best model's proba as the representative metadata probability
-    best_key = best.lower().replace(" ", "_")
-    test_predictions["metadata_fraud_proba"] = test_predictions[f"{best_key}_fraud_proba"]
-    test_predictions["metadata_pred"] = test_predictions[f"{best_key}_pred"]
-
-    # ── Export test predictions for ensemble ──────────────────────
-    output_path = OUTPUT_DIR / "metadata_test_predictions.csv"
-    test_predictions.to_csv(output_path, index=False)
-    print(f"\nSaved test predictions: {output_path}")
-    print(f"Rows: {len(test_predictions)}")
-    print(f"Columns: {list(test_predictions.columns)}")
 
     print(f"\nSaved models to: {MODEL_DIR}")
     for f in sorted(MODEL_DIR.glob("*.joblib")):

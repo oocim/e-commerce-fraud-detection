@@ -206,10 +206,14 @@ class FraudDetector:
         self.metadata_model_type = ""  # "xgboost", "random_forest", or "logistic_regression"
         self.metadata_scaler = None
         self.metadata_minmax = None  # min/max stats for _scaled features
-        self.weights = {"text": 0.475, "image": 0.05, "metadata": 0.475}
+
+        # Ensemble weights — metadata-dominant since it has F1=0.93.
+        # Text (with focal loss) should improve from F1=0.21; image from F1=0.00.
+        # Once text/image improve, rebalance weights more evenly.
+        self.weights = {"text": 0.30, "image": 0.05, "metadata": 0.65}
 
         # Temperature scaling for probability calibration (>1 = softer, <1 = sharper)
-        # text=1.0: model already calibrated via label smoothing + layer freezing
+        # text=1.0: model already calibrated via focal loss + layer freezing
         # image=1.0: normal
         # metadata=1.2: slight softening for XGBoost sharp outputs
         self.temperature = {"text": 1.0, "image": 1.0, "metadata": 1.2}
@@ -525,7 +529,7 @@ class FraudDetector:
 
     # ── Ensemble ─────────────────────────────────────────────────
 
-    def predict(self, df: pd.DataFrame, threshold: float = 0.65) -> pd.DataFrame:
+    def predict(self, df: pd.DataFrame, threshold: float = 0.35) -> pd.DataFrame:
         """
         Run full multimodal inference on a raw product DataFrame.
 
@@ -655,8 +659,8 @@ def main():
         help="Directory containing saved models (default: saved_models/)",
     )
     parser.add_argument(
-        "--threshold", type=float, default=0.60,
-        help="Fraud probability threshold (default: 0.60)",
+        "--threshold", type=float, default=0.35,
+        help="Fraud probability threshold (default: 0.35)",
     )
     parser.add_argument(
         "--interactive", action="store_true",
