@@ -207,10 +207,11 @@ class FraudDetector:
         self.metadata_scaler = None
         self.metadata_minmax = None  # min/max stats for _scaled features
 
-        # Ensemble weights — metadata-dominant since it has F1=0.93.
-        # Text (with focal loss) should improve from F1=0.21; image from F1=0.00.
-        # Once text/image improve, rebalance weights more evenly.
-        self.weights = {"text": 0.30, "image": 0.05, "metadata": 0.65}
+        # Ensemble weights — AUC-proportional based on cross-validated results.
+        # Each model's weight = its ROC-AUC / sum(all AUCs), so stronger
+        # models naturally get higher influence. This outperformed both
+        # equal weighting and manually tuned weights (F1=0.71 vs 0.70).
+        self.weights = {"text": 0.3339, "image": 0.3162, "metadata": 0.3499}
 
         # Temperature scaling for probability calibration (>1 = softer, <1 = sharper)
         # text=1.0: model already calibrated via focal loss + layer freezing
@@ -317,8 +318,11 @@ class FraudDetector:
                 self.weights = config
             if "temperature" in config:
                 self.temperature = config["temperature"]
+            if "threshold" in config:
+                self.threshold = config["threshold"]
             print(f"[Ensemble] Loaded weights: {self.weights}")
             print(f"[Ensemble] Loaded temperature: {self.temperature}")
+            print(f"[Ensemble] Loaded threshold: {getattr(self, 'threshold', 0.515)}")
         else:
             # Default: text & metadata get higher weight, image lower
             default_w = {"text": 0.475, "image": 0.05, "metadata": 0.475}
@@ -529,7 +533,7 @@ class FraudDetector:
 
     # ── Ensemble ─────────────────────────────────────────────────
 
-    def predict(self, df: pd.DataFrame, threshold: float = 0.35) -> pd.DataFrame:
+    def predict(self, df: pd.DataFrame, threshold: float = None) -> pd.DataFrame:
         """
         Run full multimodal inference on a raw product DataFrame.
 
@@ -537,6 +541,8 @@ class FraudDetector:
           product_id, text_proba, image_proba, metadata_proba,
           ensemble_proba, fraud_prediction, confidence
         """
+        if threshold is None:
+            threshold = getattr(self, 'threshold', 0.515)
         processed = self.preprocess_raw(df)
 
         print(f"\nRunning inference on {len(processed)} products ...")
