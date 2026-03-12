@@ -43,7 +43,7 @@ MODEL_DIR = PROJECT_DIR / "saved_models"
 OUTPUT_DIR.mkdir(exist_ok=True)
 MODEL_DIR.mkdir(exist_ok=True)
 SEED = 42
-SYNTH_CAP = 150  # max synthetic fraud rows (prevents overfitting)
+SYNTH_CAP = 300  # use all 300 template-generated synthetic fraud rows
 
 
 def main() -> None:
