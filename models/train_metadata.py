@@ -28,6 +28,7 @@ from sklearn.metrics import (
     accuracy_score,
     average_precision_score,
 )
+from imblearn.over_sampling import SMOTE
 from xgboost import XGBClassifier
 
 
@@ -47,6 +48,14 @@ MODEL_DIR.mkdir(exist_ok=True)
 SEED = 42
 N_FOLDS = 5
 SYNTH_CAP = 300  # use all 300 template-generated synthetic fraud rows
+
+# SMOTE config (oversamples fraud in numerical feature space)
+# Metadata features are pure tabular numerics — the classic SMOTE use case.
+# SMOTE interpolates between real fraud feature vectors to create synthetic
+# fraud samples, improving minority class representation.
+SMOTE_ENABLED = True
+SMOTE_RATIO = 0.3          # target fraud ratio (0.3 = ~30% of majority count)
+SMOTE_K_NEIGHBORS = 5      # neighbors for interpolation
 
 
 def make_models():
@@ -158,12 +167,37 @@ def main() -> None:
         X_fold_train = np.vstack([X_fold_train_real, X_synth])
         y_fold_train = np.concatenate([y_fold_train_real, y_synth])
 
-        n_train_fraud = y_fold_train.sum()
-        n_val_fraud = y_fold_val.sum()
+        n_train_fraud = int(y_fold_train.sum())
+        n_val_fraud = int(y_fold_val.sum())
         print(f"Train: {len(X_fold_train)} ({n_train_fraud} fraud, "
               f"{100*n_train_fraud/len(X_fold_train):.1f}%)")
         print(f"Val:   {len(X_fold_val)} ({n_val_fraud} fraud, "
               f"{100*n_val_fraud/len(X_fold_val):.1f}%)")
+
+        # ── SMOTE oversampling in numerical feature space ──────────────
+        if SMOTE_ENABLED:
+            n_fraud_before = n_train_fraud
+            n_legit = int((y_fold_train == 0).sum())
+            smote_target = int(n_legit * SMOTE_RATIO)
+
+            if smote_target > n_fraud_before:
+                k = min(SMOTE_K_NEIGHBORS, n_fraud_before - 1)
+                smote = SMOTE(
+                    sampling_strategy={1: smote_target},
+                    k_neighbors=k,
+                    random_state=SEED + fold_idx,
+                )
+                X_fold_train, y_fold_train = smote.fit_resample(
+                    X_fold_train, y_fold_train
+                )
+                n_synthetic = len(y_fold_train) - (n_legit + n_fraud_before)
+                print(f"  SMOTE: +{n_synthetic} fraud samples "
+                      f"(fraud {n_fraud_before}\u2192{int(y_fold_train.sum())}, "
+                      f"total {n_legit + n_fraud_before}\u2192{len(y_fold_train)})")
+            else:
+                print(f"  SMOTE: skipped \u2014 fraud already \u2265 target "
+                      f"({n_fraud_before} \u2265 {smote_target})")
+        # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 
         # Fit scaler on this fold's training data only
         fold_scaler = StandardScaler()
