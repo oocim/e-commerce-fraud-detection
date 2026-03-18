@@ -15,6 +15,7 @@ Fusion strategies:
 Outputs final ensemble metrics and saves combined predictions.
 """
 
+import argparse
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -35,24 +36,48 @@ PRED_DIR = PROJECT_DIR / "predictions"
 OUTPUT_DIR = PROJECT_DIR / "predictions"
 OUTPUT_DIR.mkdir(exist_ok=True)
 SEED = 42
+PROFILE_PRED_DIRS = {
+    "global": PROJECT_DIR / "predictions",
+    "local_only": PROJECT_DIR / "predictions" / "transfer" / "local_only",
+    "ablation": PROJECT_DIR / "predictions" / "transfer" / "ablation",
+}
 
 
-def load_predictions():
+def resolve_prediction_file(pred_dir: Path, modality: str, profile: str) -> Path:
+    """Resolve per-modality prediction filename for global or transfer profiles."""
+    if profile == "global":
+        candidates = [
+            pred_dir / f"{modality}_test_predictions.csv",
+            pred_dir / f"{modality}_test_predictions_transfer.csv",
+        ]
+    else:
+        candidates = [
+            pred_dir / f"{modality}_test_predictions_transfer.csv",
+            pred_dir / f"{modality}_test_predictions.csv",
+        ]
+
+    for path in candidates:
+        if path.exists():
+            return path
+    return candidates[0]
+
+
+def load_predictions(pred_dir: Path, profile: str):
     """Load and merge predictions from all three modalities."""
-    text_path = PRED_DIR / "text_test_predictions.csv"
-    image_path = PRED_DIR / "image_test_predictions.csv"
-    meta_path = PRED_DIR / "metadata_test_predictions.csv"
+    text_path = resolve_prediction_file(pred_dir, "text", profile)
+    image_path = resolve_prediction_file(pred_dir, "image", profile)
+    meta_path = resolve_prediction_file(pred_dir, "metadata", profile)
 
     missing = [p for p in [text_path, image_path, meta_path] if not p.exists()]
     if missing:
         print("Missing prediction files:")
         for p in missing:
             print(f"  - {p}")
-        print("\nAvailable files in predictions/:")
-        if PRED_DIR.exists():
-            for f in sorted(PRED_DIR.glob("*.csv")):
+        print(f"\nAvailable files in {pred_dir}:")
+        if pred_dir.exists():
+            for f in sorted(pred_dir.glob("*.csv")):
                 print(f"  - {f.name}")
-        raise FileNotFoundError("Run all three models first and place CSVs in predictions/")
+        raise FileNotFoundError("Run all three modality models first for the selected profile.")
 
     text_df = pd.read_csv(text_path)
     image_df = pd.read_csv(image_path)
@@ -102,11 +127,39 @@ def evaluate(y_true, y_pred, y_proba, label=""):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Evaluate multimodal ensemble predictions")
+    parser.add_argument(
+        "--profile",
+        type=str,
+        default="global",
+        choices=["global", "local_only", "ablation"],
+        help="Prediction profile to evaluate",
+    )
+    parser.add_argument(
+        "--pred-dir",
+        type=str,
+        default=None,
+        help="Explicit prediction directory override",
+    )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Output CSV path for ensemble predictions",
+    )
+    args = parser.parse_args()
+
+    pred_dir = Path(args.pred_dir) if args.pred_dir else PROFILE_PRED_DIRS[args.profile]
+    output_dir = pred_dir
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     print("=" * 60)
     print("  MULTIMODAL ENSEMBLE EVALUATION")
     print("=" * 60 + "\n")
+    print(f"Profile: {args.profile}")
+    print(f"Prediction directory: {pred_dir}\n")
 
-    merged = load_predictions()
+    merged = load_predictions(pred_dir=pred_dir, profile=args.profile)
 
     y_true = merged["fraud_label"].values
     p_text = merged["text_fraud_proba"].values
@@ -196,7 +249,8 @@ def main():
     merged["ensemble_stack_proba"] = stack_proba
     merged["ensemble_final_pred"] = tuned_preds
 
-    output_path = OUTPUT_DIR / "ensemble_predictions.csv"
+    default_name = "ensemble_predictions.csv" if args.profile == "global" else "ensemble_predictions_transfer.csv"
+    output_path = Path(args.output) if args.output else output_dir / default_name
     merged.to_csv(output_path, index=False)
     print(f"\nSaved ensemble predictions: {output_path}")
 
