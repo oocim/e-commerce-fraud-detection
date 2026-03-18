@@ -3,3 +3,6 @@ __pycache__
 saved_models
 predictions
 generators
+paper
+transfer_models
+processed_data
