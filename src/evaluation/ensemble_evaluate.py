@@ -31,15 +31,15 @@ from sklearn.metrics import (
     average_precision_score,
 )
 
-PROJECT_DIR = Path(__file__).resolve().parent
-PRED_DIR = PROJECT_DIR / "predictions"
-OUTPUT_DIR = PROJECT_DIR / "predictions"
+REPO_DIR = Path(__file__).resolve().parents[2]
+PRED_DIR = REPO_DIR / "predictions"
+OUTPUT_DIR = REPO_DIR / "predictions"
 OUTPUT_DIR.mkdir(exist_ok=True)
 SEED = 42
 PROFILE_PRED_DIRS = {
-    "global": PROJECT_DIR / "predictions",
-    "local_only": PROJECT_DIR / "predictions" / "transfer" / "local_only",
-    "ablation": PROJECT_DIR / "predictions" / "transfer" / "ablation",
+    "global": REPO_DIR / "predictions",
+    "local_only": REPO_DIR / "predictions" / "transfer" / "local_only",
+    "ablation": REPO_DIR / "predictions" / "transfer" / "ablation",
 }
 
 

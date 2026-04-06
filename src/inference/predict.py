@@ -11,6 +11,9 @@ Usage:
     # Classify a CSV file
     python predict.py --input new_products.csv --output results.csv
 
+    # Use transfer-trained local-only models
+    python predict.py --profile local_only --input new_products.csv --output results.csv
+
     # Classify a single product interactively
     python predict.py --interactive
 
@@ -62,8 +65,13 @@ except ImportError:
 
 warnings.filterwarnings("ignore")
 
-PROJECT_DIR = Path(__file__).resolve().parent
-MODELS_DIR = PROJECT_DIR / "saved_models"
+REPO_DIR = Path(__file__).resolve().parents[2]
+MODELS_DIR = REPO_DIR / "saved_models"
+PROFILE_MODEL_DIRS = {
+    "global": REPO_DIR / "saved_models",
+    "local_only": REPO_DIR / "transfer_models" / "local_only",
+    "ablation": REPO_DIR / "transfer_models" / "ablation",
+}
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -665,6 +673,11 @@ def main():
         help="Directory containing saved models (default: saved_models/)",
     )
     parser.add_argument(
+        "--profile", type=str, default="global",
+        choices=["global", "local_only", "ablation"],
+        help="Model profile to use when --models-dir is not provided",
+    )
+    parser.add_argument(
         "--threshold", type=float, default=0.35,
         help="Fraud probability threshold (default: 0.35)",
     )
@@ -674,7 +687,11 @@ def main():
     )
     args = parser.parse_args()
 
-    detector = FraudDetector(models_dir=args.models_dir)
+    resolved_models_dir = Path(args.models_dir) if args.models_dir else PROFILE_MODEL_DIRS[args.profile]
+    print(f"Using model profile: {args.profile}")
+    print(f"Using models directory: {resolved_models_dir}")
+
+    detector = FraudDetector(models_dir=resolved_models_dir)
     detector.load_models()
 
     if args.interactive:

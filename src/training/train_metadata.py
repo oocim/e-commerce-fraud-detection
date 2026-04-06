@@ -32,17 +32,21 @@ from imblearn.over_sampling import SMOTE
 from xgboost import XGBClassifier
 
 
-BASE_DIR = Path(__file__).resolve().parent
-PROJECT_DIR = BASE_DIR if (BASE_DIR / "processed_data").exists() else BASE_DIR.parent
+REPO_DIR = Path(__file__).resolve().parents[2]
+PROCESSED_DIR = (
+    REPO_DIR / "data" / "processed"
+    if (REPO_DIR / "data" / "processed").exists()
+    else REPO_DIR / "processed_data"
+)
 
-DATA_PATH = PROJECT_DIR / "processed_data" / "metadata_dataset.csv"
+DATA_PATH = PROCESSED_DIR / "metadata_dataset.csv"
 SYNTH_PATH_CANDIDATES = [
-    PROJECT_DIR / "processed_data" / "synthetic_metadata_dataset.csv",
-    PROJECT_DIR / "synthetic_metadata_dataset.csv",
-    PROJECT_DIR / "synthetic_metadata__dataset.csv",
+    PROCESSED_DIR / "synthetic_metadata_dataset.csv",
+    REPO_DIR / "synthetic_metadata_dataset.csv",
+    REPO_DIR / "synthetic_metadata__dataset.csv",
 ]
-OUTPUT_DIR = PROJECT_DIR / "predictions"
-MODEL_DIR = PROJECT_DIR / "saved_models"
+OUTPUT_DIR = REPO_DIR / "predictions"
+MODEL_DIR = REPO_DIR / "saved_models"
 OUTPUT_DIR.mkdir(exist_ok=True)
 MODEL_DIR.mkdir(exist_ok=True)
 SEED = 42

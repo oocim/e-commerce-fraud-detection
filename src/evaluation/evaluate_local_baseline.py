@@ -30,9 +30,10 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import train_test_split
 
-PROJECT_DIR = Path(__file__).resolve().parent
-if str(PROJECT_DIR) not in sys.path:
-    sys.path.insert(0, str(PROJECT_DIR))
+REPO_DIR = Path(__file__).resolve().parents[2]
+INFERENCE_DIR = REPO_DIR / "src" / "inference"
+if str(INFERENCE_DIR) not in sys.path:
+    sys.path.insert(0, str(INFERENCE_DIR))
 
 try:
     import predict as predict_module
@@ -45,8 +46,12 @@ except ModuleNotFoundError as exc:
     ) from exc
 
 
-LOCAL_DIR = PROJECT_DIR / "processed_data" / "local"
-PRED_DIR = PROJECT_DIR / "predictions" / "local"
+LOCAL_DIR = (
+    REPO_DIR / "processed_data" / "local"
+    if (REPO_DIR / "processed_data" / "local").exists()
+    else REPO_DIR / "data" / "local"
+)
+PRED_DIR = REPO_DIR / "predictions" / "local"
 PRED_DIR.mkdir(parents=True, exist_ok=True)
 SPLIT_PATH = LOCAL_DIR / "local_labeled_split_tags.csv"
 

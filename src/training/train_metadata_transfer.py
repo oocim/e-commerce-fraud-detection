@@ -40,7 +40,7 @@ from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 
 
-PROJECT_DIR = Path(__file__).resolve().parent.parent
+REPO_DIR = Path(__file__).resolve().parents[2]
 SEED = 42
 N_FOLDS = 5
 
@@ -94,7 +94,7 @@ def main() -> None:
     parser.add_argument(
         "--data",
         type=str,
-        default=str(PROJECT_DIR / "processed_data" / "local" / "transfer_train" / "local_transfer_train_metadata_dataset.csv"),
+        default=str(REPO_DIR / "processed_data" / "local" / "transfer_train" / "local_transfer_train_metadata_dataset.csv"),
         help="Path to transfer metadata dataset CSV",
     )
     parser.add_argument(
@@ -113,7 +113,7 @@ def main() -> None:
 
     data_path = Path(args.data)
 
-    default_out_dir = PROJECT_DIR / "transfer_models" / args.profile / "metadata"
+    default_out_dir = REPO_DIR / "transfer_models" / args.profile / "metadata"
     pred_out_dir = Path(args.pred_out_dir) if args.pred_out_dir else default_out_dir
     model_out_dir = Path(args.model_out_dir) if args.model_out_dir else default_out_dir
 
