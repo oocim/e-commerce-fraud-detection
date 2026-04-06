@@ -6,7 +6,7 @@ The study is titled Cross-Platform Multimodal Product Fraud Detection Framework 
 
 This repository contains the implementation, datasets, notebooks, and study artifacts for the multimodal e-commerce fraud detection framework developed in that thesis. The system combines text, image, and tabular metadata signals, then fuses modality probabilities into a final fraud decision.
 
-## Credits
+## ©️ Credits
 
 - Researchers: [Capinpin, Kobe Andrew S.](https://github.com/VinnRe), [Cuarto, Mico Raphael F.](https://github.com/oocim), [Penuliar, Alexander Guille A.](https://github.com/agilap)
 - Adviser: Lanie P. Palad
@@ -16,14 +16,14 @@ This repository contains the implementation, datasets, notebooks, and study arti
 
 ## 1. Project Summary
 
-### Goal
+### 🎯 Goal
 Build and evaluate a fraud detection framework for e-commerce listings using:
 - Text modality: hybrid RoBERTa + TF-IDF
 - Image modality: ResNet-50
 - Metadata modality: classical ML models (Logistic Regression, Random Forest, XGBoost)
 - Final decision: weighted late-fusion ensemble
 
-### Main Study Focus
+### 🔎 Main Study Focus
 - Compare unimodal and multimodal baselines
 - Apply transfer adaptation to local datasets
 - Improve fraud-class capture under severe class imbalance
@@ -64,10 +64,10 @@ Build and evaluate a fraud detection framework for e-commerce listings using:
 
 ## 4. Data Files
 
-### Primary Inputs
+### 🔣 Primary Inputs
 - `data/raw/Training_Data - Train.csv`
 
-### Processed Datasets
+### ⚙️ Processed Datasets
 - `data/processed/text_dataset.csv`
 - `data/processed/image_dataset.csv`
 - `data/processed/metadata_dataset.csv`
@@ -76,12 +76,12 @@ Build and evaluate a fraud detection framework for e-commerce listings using:
 
 ## 5. Environment Setup
 
-### Requirements
+### 📝 Requirements
 - Python 3.10+ recommended
 - pip
 - Internet access may be needed for model/tokenizer downloads when running some workflows
 
-### Install
+### 📥 Install
 
 ```bash
 python -m venv .venv
